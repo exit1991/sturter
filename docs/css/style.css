@@ -17,10 +17,10 @@ body {
     font-family: 'M PLUS 1p', sans-serif;
     font-weight: normal;
     font-size: 1rem;
-    color: rgba(120, 120, 120, 1.0);
+    color: rgba(70, 70, 70, 1.0);
 
     /* ---- 背景 ---- */
-    background-image: url(../img/whitewall_20per.png),
+    background-image: url(../img/whitewall_10per.png),
                       url(../img/Top_BG_01.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -30,22 +30,12 @@ body {
 /* --------------------------- */
 /*         リンク文字設定         */
 /* --------------------------- */
-/* リンク設定文字（状態指定なし） */
 a {
-    /* リンクに下線はつけない */
+    /* ---- リンクの下線（つけない） ---- */
     text-decoration: none;
-}
-/* 訪問前 */
-a:link {
-    /* 親を継承 */
+    /* ---- 文字色（親を継承） ---- */
     color: inherit;
 }
-/* 訪問済み */
-a:visited {
-    /* 親を継承 */
-    color: inherit;
-}
-
 
 
 /* --------------------------- */
@@ -57,6 +47,7 @@ header {
     font-family: "DIN Alternate Bold", sans-serif;
     font-weight: bold;
     font-size: 2rem;
+    color: rgba(100, 100, 100, 1.0);
 
     /* ---- Gridレイアウト ---- */
     display: grid;
@@ -73,7 +64,7 @@ header {
     /* color: rgba(252, 252, 252, 1.0); */
 
     /* ---- 余白 ---- */
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 
@@ -93,8 +84,8 @@ header .header-nav {
 /* ロゴ画像 */
 #top-logo {
     /* ---- サイズ ---- */
-    width: calc(2000px * 0.14);
-    height: calc(600px * 0.14);
+    width: calc(2000px * 0.1);
+    height: calc(600px * 0.1);
 
     /* ---- 位置 ---- */
     /* 画像の縦位置を設定しないと、文字用に下に余白が出来てしまう */
@@ -151,10 +142,82 @@ header .header-nav {
 
 /* トップエリア */
 .top-area {
-    display: flex;
+    /* ---- Gridレイアウト ---- */
+    display: grid;
+    /* 列数・行数の数は幅を指定（frで均等幅になる） */
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto;
+    /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
+    grid-template-areas: "grid-phone-image grid-top-text";
+    /* それぞれのセル内のコンテンツの位置設定（justify：横／align：縦） */
+    justify-items: center;
+    align-items: center;
+    column-gap: 3rem;
+
+    /* ---- 余白 ---- */
+    margin: 3rem 5rem;;
 }
 
-#iphone-image {
-    width: 50%;
-    height: 50%;
+
+/* Gridレイアウト */
+.top-area .grid-phone-image {
+    /* 本来は grid-row などで線番号で指定するが */
+    /* 名前を設定していれば名前の指定だけでOK */
+    grid-area: grid-phone-image;
+    justify-self: end;
+}
+.top-area .grid-top-text {
+    /* 本来は grid-row などで線番号で指定するが */
+    /* 名前を設定していれば名前の指定だけでOK */
+    grid-area: grid-top-text;
+    justify-self: start;
+}
+
+/* 画面イメージ */
+#phone-image {
+    width: calc(1370px * 0.23);
+    height: calc(2712px * 0.23);
+    filter: drop-shadow(-6px 6px 10px rgba(0, 0, 0, 0.5));
+}
+
+.grid-top-text h1 {
+    font-size: 2.5rem;
+    margin: 0 0 3rem;
+}
+
+.grid-top-text p {
+    font-size: 1.5rem;
+}
+
+.grid-top-text .storelink-icon {
+    margin: 6rem 0rem 1rem;
+}
+
+.grid-top-text .caution p {
+    font-size: 0.8rem;
+}
+
+
+
+/* --------------------------- */
+/*           概要部分           */
+/* --------------------------- */
+/* ※※ 作成予定 ※※ */
+
+
+
+
+
+/* --------------------------- */
+/*         FOOTER部分           */
+/* --------------------------- */
+footer {
+	background-color: inherit;
+	width: 100%;
+	text-align: center;
+	margin: 1rem 0;
+}
+
+footer p {
+	color: rgba(120, 120, 120, 1.0);
 }
