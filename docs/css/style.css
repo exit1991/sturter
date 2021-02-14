@@ -1,0 +1,160 @@
+
+/* フォント読み込み */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
+@font-face {
+    font-family: "DIN Alternate Bold";
+    src: url("../fonts/DIN Alternate Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+
+
+/* --------------------------- */
+/*          全体部分            */
+/* --------------------------- */
+body {
+    /* ---- フォント ---- */
+    font-family: 'M PLUS 1p', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: rgba(120, 120, 120, 1.0);
+
+    /* ---- 背景 ---- */
+    background-image: url(../img/whitewall_20per.png),
+                      url(../img/Top_BG_01.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* --------------------------- */
+/*         リンク文字設定         */
+/* --------------------------- */
+/* リンク設定文字（状態指定なし） */
+a {
+    /* リンクに下線はつけない */
+    text-decoration: none;
+}
+/* 訪問前 */
+a:link {
+    /* 親を継承 */
+    color: inherit;
+}
+/* 訪問済み */
+a:visited {
+    /* 親を継承 */
+    color: inherit;
+}
+
+
+
+/* --------------------------- */
+/*         HEADER部分           */
+/* --------------------------- */
+/* ナビゲーションバー本体 */
+header {
+    /* ---- フォント ---- */
+    font-family: "DIN Alternate Bold", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+
+    /* ---- Gridレイアウト ---- */
+    display: grid;
+    /* 列数・行数の数は幅を指定（frで均等幅になる） */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
+    grid-template-areas: "header-left header-center header-right";
+    /* それぞれのセル内のコンテンツの位置設定 */
+    justify-items: center; /* 横位置 */
+    align-items: center; /* 縦位置 */
+
+    /* ---- 色 ---- */
+    /* color: rgba(252, 252, 252, 1.0); */
+
+    /* ---- 余白 ---- */
+    margin-top: 0.5rem;
+}
+
+
+/* Gridレイアウト */
+header .header-logo {
+    /* 本来は grid-row などで線番号で指定するが */
+    /* 名前を設定していれば名前の指定だけでOK */
+    grid-area: header-center;
+}
+header .header-nav {
+    /* 本来は grid-row などで線番号で指定するが */
+    /* 名前を設定していれば名前の指定だけでOK */
+    grid-area: header-right;
+}
+
+
+/* ロゴ画像 */
+#top-logo {
+    /* ---- サイズ ---- */
+    width: calc(2000px * 0.14);
+    height: calc(600px * 0.14);
+
+    /* ---- 位置 ---- */
+    /* 画像の縦位置を設定しないと、文字用に下に余白が出来てしまう */
+    vertical-align: middle;
+}
+
+
+/* メインナビゲーション全体 */
+.header-nav ul {
+    /* ---- Flexレイアウト ---- */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* ---- 余白 ---- */
+    margin: 0.5rem 2rem;
+}
+
+/* ナビゲーションの１項目 */
+.header-nav ul li {
+    /* ---- フォント ---- */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    /* ---- リストの表示設定 ---- */
+    list-style-type: none;
+
+    /* ---- 下線 ---- */
+    border-bottom: 0.2rem solid;
+
+    /* ---- 余白 ---- */
+    padding: 0.2rem 0.5rem;
+    margin: 0rem 1.0rem
+}
+
+
+
+/* メニューのトランジション設定 */
+.header-nav ul li {
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+/* メニュー選択時 */
+.header-nav ul li:hover {
+    color: rgba(228, 95, 95, 1.0);
+}
+
+
+
+/* --------------------------- */
+/*          メイン部分           */
+/* --------------------------- */
+
+/* トップエリア */
+.top-area {
+    display: flex;
+}
+
+#iphone-image {
+    width: 50%;
+    height: 50%;
+}
