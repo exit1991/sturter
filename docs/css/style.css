@@ -203,11 +203,124 @@ header .header-nav {
 
 
 /* --------------------------- */
-/*           概要部分           */
+/*          ABOUT部分           */
 /* --------------------------- */
-/* ※※ 作成予定 ※※ */
+/* アバウトの中一括 */
+#about>div {
+    /* ---- Gridレイアウト ---- */
+    display: grid;
+    /* 列数・行数の数は幅を指定（frで均等幅になる） */
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
+    /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
+    grid-template-areas:
+        "grid-about-title grid-about-title"
+        "grid-about-icon grid-about-description";
+    /* それぞれのセル内のコンテンツの位置設定（justify：横／align：縦） */
+    justify-items: center;
+    align-items: center;
+    column-gap: 3rem;
+
+    /* ---- フォント ---- */
+    color: rgba(252, 252, 252, 1.0);
+
+    /* ---- 余白 ---- */
+    padding: 4rem 4rem;
+}
+
+/* アバウトごとの背景色 */
+.about-01 {
+    background-color: rgba(41, 124, 180, 1.0);
+}
+.about-02 {
+    background-color: rgba(21, 63, 92, 1.0);
+}
+
+/* アバウトタイトル部分一括 */
+.grid-about-title {
+    /* ---- Gridレイアウト ---- */
+    grid-area: grid-about-title;
+    /* ---- テキスト設定 ---- */
+    text-align: center;
+}
+
+/* アバウトのアイコン一括 */
+.grid-about-icon {
+    /* ---- Gridレイアウト ---- */
+    grid-area: grid-about-icon;
+    justify-self: end;
+}
+
+/* アバウトの詳細部分一括 */
+.grid-about-description {
+    /* ---- Gridレイアウト ---- */
+    grid-area: grid-about-description;
+    justify-self: start;
+    /* ---- テキスト設定 ---- */
+    font-size: 1.3rem;
+}
+
+/* アイコンの大きさ一括 */
+.about-icon {
+    width: calc(1100px * 0.25);
+    height: calc(1100px * 0.25);
+}
 
 
+
+/* --------------------------- */
+/*         下部ボタン部分         */
+/* --------------------------- */
+.link-buttons {
+    /* ---- Flexボックス ---- */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ---- フォント ---- */
+    color: rgba(252, 252, 252, 1.0);
+    /* ---- 余白 ---- */
+    margin: 4rem 3rem;
+}
+
+.link-buttons>div {
+    /* ---- ボックスの大きさ ---- */
+    width: 23rem;
+}
+
+.link-buttons>div p {
+    /* ---- フォント ---- */
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* ---- ボックスの角丸 ---- */
+    border-radius: 3rem;
+    /* ---- 余白 ---- */
+    padding: 1rem 1rem;
+    margin: 2rem 0;
+}
+
+.button-csv p {
+    background-color: rgba(228, 94, 94, 1.0);
+}
+.button-qa p {
+    background-color: rgba(255, 134, 51, 1.0);
+}
+
+
+/* アニメーション設定 */
+.link-buttons>div p {
+    transition-property: transform, box-shadow;
+    transition-duration: 0.3s;
+}
+.link-buttons>div p:hover {
+    transform: translate(-4px, -6px);
+    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
+    /* text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3); */
+}
+.link-buttons>div p:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+}
 
 
 
