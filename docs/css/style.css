@@ -210,12 +210,16 @@ header .header-nav {
     /* ---- Gridレイアウト ---- */
     display: grid;
     /* 列数・行数の数は幅を指定（frで均等幅になる） */
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 3fr 3fr 1fr;
+    /* grid-template-columns: 1fr 1fr 2fr 1fr; */
+    grid-template-rows: 1fr 5fr;
     /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
     grid-template-areas:
-        "grid-about-title grid-about-title"
-        "grid-about-icon grid-about-description";
+        "grid-about-title grid-about-title grid-about-title"
+        "grid-about-icon grid-about-description none";
+    /* grid-template-areas:
+        "grid-about-title grid-about-title grid-about-title grid-about-title"
+        "none grid-about-icon grid-about-description none"; */
     /* それぞれのセル内のコンテンツの位置設定（justify：横／align：縦） */
     justify-items: center;
     align-items: center;
@@ -223,6 +227,7 @@ header .header-nav {
 
     /* ---- フォント ---- */
     color: rgba(252, 252, 252, 1.0);
+    font-weight: 200;
 
     /* ---- 余白 ---- */
     padding: 4rem 4rem;
