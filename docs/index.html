@@ -4,16 +4,95 @@
         <meta charset="utf-8">
         <title>HOME | STURTER - 学習支援アプリ</title>
 
-    <!-- リセットCSS -->
+        <!-- リセットCSS -->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <!-- メインCSS -->
+        <!-- メインCSS -->
         <link rel="stylesheet" href="./css/style.css">
-    <!-- ファビコン -->
-        <link rel="icon" type="image/png" href="images/favicon.ico">
+        <!-- ファビコン -->
+        <link rel="icon" type="image/png" href="./img/favicon.ico">
     </head>
     <body>
-        <p>準備中</p>
-
-
+        <header>
+            <!-- <div class="left-area"></div> -->
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="./img/Top_Logo.png" alt="スターター" id="top-logo">
+                    <!-- <img src="images/hp_icon.svg" alt="" width="50" height="50">
+                    <span id="logo-text">dexit Works</span> -->
+                </a>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html">How To</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="top-area">
+                <div class="grid-phone-image">
+                    <img src="./img/Top_iPhone_Image_01.png" alt="アプリ画面イメージ" id="phone-image">
+                </div>
+                <div class="grid-top-text">
+                    <section>
+                        <h1>アナログ＋デジタル<br>良いとこ取りの勉強支援アプリ！</h1>
+                        <p>問題の「答え」を登録するだけで、あなただけのデジタル管理システムの出来上がり！</p>
+                        <a href="index.html">
+                            <img src="./img/App_Store_Badge.svg" alt="AppStoreへのリンクボタン" class="storelink-icon">
+                            <p>Comming Soon...</p>
+                        </a>
+                        <div class="caution">
+                            <p>※ 答えを含めた情報の登録には、CSVファイルが作成・編集可能なアプリが別途必要です。</p>
+                            <p>※ Apple および Apple ロゴは米国その他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div id="about">
+                <div class="about-01">
+                    <div class="grid-about-title">
+                        <h1>本とスマホで資格勉強を効率化！</h1>
+                    </div>
+                    <div class="grid-about-icon">
+                        <img src="./img/Top_Icon_01_2x.png" alt="スマートフォンと本のアイコン" class="about-icon">
+                    </div>
+                    <div class="grid-about-description">
+                        <p>
+                            インターネット上に問題集のコンテンツがなくても、
+                            お手持ちの「本」の情報を読み込むだけで、自分だけの電子問題集が作れます。
+                            正誤の履歴が残るので、苦手な部分を中心に効率的に資格勉強を行うことができます。
+                        </p>
+                    </div>
+                </div>
+                <div class="about-02">
+                    <div class="grid-about-title">
+                        <h1>必要なのは「答え」だけ！</h1>
+                    </div>
+                    <div class="grid-about-icon">
+                        <img src="./img/Top_Icon_02_2x.png" alt="答えのアイコン" class="about-icon">
+                    </div>
+                    <div class="grid-about-description">
+                        <p>
+                            問題データはCSVデータに入力して読み込みます。
+                            その際に使用するデータには「問題文」は必須ではありません。
+                            「答え」の情報だけ登録しておけば、問題文と解説を本の問題集・参考書を見ながら、
+                            問題を解き、結果の記録と答え合わせを効率的に行うことが出来ます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="link-buttons">
+                <div class="button-csv">
+                    <a href="index.html"><p>CSVの作成手順はこちら</p></a>
+                </div>
+                <div class="button-qa">
+                    <a href="index.html"><p>Ｑ＆Ａはこちら</p></a>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p><small>&copy; STURTER All rights reserved.</small></p>
+        </footer>
     </body>
 </html>
