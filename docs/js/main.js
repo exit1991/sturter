@@ -5,12 +5,12 @@
 // 画面が読み込まれた際の処理
 window.onload = function() {
     // ハンバーガーボタンを取得
-    var hamBtn = document.querySelector('.hamburger_toggle');
+    var hamBtn = document.querySelector('.hamburger-toggle');
 
     // ボタンクリック時のイベントを定義
     hamBtn.onclick = function() {
         var addClassName   = 'show';
-        var targetSelecter = ['.hamburger_toggle','.main-nav','.hamburger_mask'];
+        var targetSelecter = ['.hamburger-toggle','.main-nav','.hamburger-mask'];
 
         // targetSelecter のある要素に対して addClassName のクラスを 追加／削除 する
         for (var i = 0; i < targetSelecter.length; i++) {

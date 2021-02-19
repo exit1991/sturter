@@ -102,7 +102,19 @@ header .header-nav {
 
 
 /* ハンバーガーメニュー関連 */
-.hamburger_toggle {
+.hamburger-bg {
+    display: block;
+    position: fixed;
+    top: 5px;
+    right: 9px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    visibility: visible;
+    z-index: 3;
+    background-color: #fff;
+}
+.hamburger-toggle {
     display: block;
     /* position: relative; */
     position: fixed;
@@ -113,7 +125,7 @@ header .header-nav {
     visibility: visible;
     z-index: 3;
 }
-.hamburger_toggle span {
+.hamburger-toggle span {
     display: block;
     width: 100%;
     height: 0.7rem;
@@ -122,24 +134,24 @@ header .header-nav {
     position: absolute;
     transition: transform .5s, opacity .5s;
 }
-.hamburger_toggle span:nth-child(1) {
+.hamburger-toggle span:nth-child(1) {
     top: 0;
 }
-.hamburger_toggle span:nth-child(2) {
+.hamburger-toggle span:nth-child(2) {
     top: 0;
     bottom: 0;
     margin: auto;
 }
-.hamburger_toggle span:nth-child(3) {
+.hamburger-toggle span:nth-child(3) {
     bottom: 0;
 }
-.hamburger_toggle.show span:nth-child(1) {
+.hamburger-toggle.show span:nth-child(1) {
     transform: translateY(1.12rem) rotate(-45deg);
 }
-.hamburger_toggle.show span:nth-child(2) {
+.hamburger-toggle.show span:nth-child(2) {
     opacity: 0;
 }
-.hamburger_toggle.show span:nth-child(3) {
+.hamburger-toggle.show span:nth-child(3) {
     transform: translateY(-1.12rem) rotate(45deg);
 }
 
@@ -175,7 +187,7 @@ header .header-nav {
     color: rgba(228, 95, 95, 1.0);
 }
 /* メニュー表示時の画面マスク */
-.hamburger_mask {
+.hamburger-mask {
     display: block;
     background: #fff;
     position: fixed;
@@ -188,12 +200,18 @@ header .header-nav {
     z-index: 2;
 }
 /* メニュー表示時の画面マスク（メニュー開いた時） */
-.hamburger_mask.show {
+.hamburger-mask.show {
     visibility: visible;
     opacity: .8;
     cursor: pointer;
     transition: opacity 1s;
 }
+
+
+
+
+
+
 
 
 
@@ -210,7 +228,10 @@ header .header-nav {
     }
 
     /* ハンバーガーメニューの非表示 */
-    .hamburger_toggle {
+    .hamburger-bg {
+        visibility: hidden;
+    }
+    .hamburger-toggle {
         visibility: hidden;
     }
 
@@ -444,7 +465,7 @@ header .header-nav {
     /* アバウトの中一括 */
     #about > div {
         display: grid;
-        grid-template-columns: 3fr 3fr 1fr;
+        grid-template-columns: 5fr 7fr 1fr;
         grid-template-rows: 1fr 5fr;
         grid-template-areas:
             "grid-about-title grid-about-title grid-about-title"
@@ -473,7 +494,8 @@ header .header-nav {
 
     /* アバウトの詳細部分一括 */
     .grid-about-description {
-        font-size: 1.3rem;
+        /* font-size: 1.4rem; */
+        font-size: max(1.4rem, 18px);
         grid-area: grid-about-description;
         justify-self: start;
         margin: 0;
