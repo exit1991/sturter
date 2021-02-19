@@ -1,5 +1,6 @@
-
-/* フォント読み込み */
+/*-------------------
+       WEBフォント
+--------------------*/
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
 @font-face {
     font-family: "DIN Alternate Bold";
@@ -11,9 +12,23 @@
 /* 検索MEMO：(?!(;|{|}|/)).$ */
 
 
-/*---------------
-      全体部分            
-----------------*/
+
+
+/* @media screen and (min-width: 600px) {
+
+} */
+
+
+
+/*-------------------
+        全体部分
+--------------------*/
+html {
+    /* 基本は1.2vw、ただし10pxより小さくはしない */
+    font-size: max(1.2vw, 10px);
+}
+
+
 body {
     /* ---- フォント ---- */
     font-family: 'M PLUS 1p', sans-serif;
@@ -29,9 +44,12 @@ body {
 }
 
 
-/* --------------------------- */
-/*         リンク文字設定         */
-/* --------------------------- */
+
+
+
+/*-------------------
+      リンク文字設定
+--------------------*/
 a {
     /* ---- リンクの下線（つけない） ---- */
     text-decoration: none;
@@ -40,9 +58,9 @@ a {
 }
 
 
-/* --------------------------- */
-/*         HEADER部分           */
-/* --------------------------- */
+/*-------------------
+       HEADER部分
+--------------------*/
 /* ナビゲーションバー本体 */
 header {
     /* ---- フォント ---- */
@@ -83,7 +101,6 @@ header .header-nav {
     grid-area: header-right;
 }
 
-
 /* ロゴ画像 */
 #top-logo {
     /* ---- サイズ ---- */
@@ -96,40 +113,104 @@ header .header-nav {
 }
 
 
-/* メインナビゲーション全体 */
-.header-nav ul {
-    /* ---- Flexレイアウト ---- */
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
 
-    /* ---- 余白 ---- */
-    margin: 0.5rem 0rem;
+
+/* ハンバーガートグル */
+.hamburger_toggle {
+    display: block;
+    /* position: relative; */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 3.5rem;
+    height: 3rem;
+    visibility: visible;
+    z-index: 3;
+}
+.hamburger_toggle span {
+    display: block;
+    width: 100%;
+    height: 0.7rem;
+    background-color: #333;
+    border-radius: 1rem;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+}
+.hamburger_toggle span:nth-child(1) {
+    top: 0;
+}
+.hamburger_toggle span:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.hamburger_toggle span:nth-child(3) {
+    bottom: 0;
 }
 
-/* ナビゲーションの１項目 */
+.hamburger_toggle.show span:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+.hamburger_toggle.show span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger_toggle.show span:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+
+
+.main-nav {
+    position: fixed;
+    top: 6rem;
+    right: -5rem;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, right 1s;
+    z-index: 4;
+}
+
+.main-nav.show {
+    right: 5rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+
 .header-nav ul li {
     /* ---- フォント ---- */
-    font-size: 1.2rem;
+    font-size: 4rem;
     text-transform: uppercase;
 
     /* ---- リストの表示設定 ---- */
     list-style-type: none;
 
-    /* ---- ボックスの下線 ---- */
-    border-bottom: 0.15rem solid;
-
     /* ---- 余白 ---- */
-    padding: 0.6rem 0.8rem;
-    margin: 0rem 0.5rem;
+    padding: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 
 
-/* メニューのトランジション設定 */
-.header-nav ul li {
-    transition-property: color;
-    transition-duration: 0.5s;
+.hamburger_mask {
+    display: block;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.hamburger_mask.show {
+  visibility: visible;
+  opacity: .8;
+  cursor: pointer;
+  transition: opacity 1s;
 }
 
 /* メニュー選択時 */
@@ -139,10 +220,73 @@ header .header-nav {
 
 
 
-/* --------------------------- */
-/*          メイン部分           */
-/* --------------------------- */
 
+/* デスクトップ版 */
+@media screen and (min-width: 600px) {
+
+    /* ハンバーガーメニューの非表示 */
+    .hamburger_toggle {
+        visibility: hidden;
+    }
+
+    .main-nav {
+        position: inherit;
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    /* ナビゲーションの表示 */
+    .header-nav {
+        display: inherit;
+    }
+
+    /* メインナビゲーション全体 */
+    .header-nav ul {
+        /* ---- Flexレイアウト ---- */
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        /* ---- 余白 ---- */
+        margin: 0.5rem 0rem;
+    }
+
+    /* ナビゲーションの１項目 */
+    .header-nav ul li {
+        /* ---- フォント ---- */
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        /* ---- リストの表示設定 ---- */
+        list-style-type: none;
+
+        /* ---- ボックスの下線 ---- */
+        border-bottom: 0.15rem solid;
+
+        /* ---- 余白 ---- */
+        padding: 0.6rem 0.8rem;
+        margin: 0rem 0.5rem;
+    }
+
+    /* メニューのトランジション設定 */
+    .header-nav ul li {
+        transition-property: color;
+        transition-duration: 0.5s;
+    }
+
+    /* メニュー選択時 */
+    .header-nav ul li:hover {
+        color: rgba(228, 95, 95, 1.0);
+    }
+}
+
+
+
+
+/*-------------------
+       メイン部分
+--------------------*/
 /* トップエリア */
 .top-area {
     /* ---- Gridレイアウト ---- */
@@ -178,8 +322,13 @@ header .header-nav {
 
 /* 画面イメージ */
 #phone-image {
-    width: calc(1370px * 0.23);
-    height: calc(2712px * 0.23);
+    /* width: calc(1370px * 0.23);
+    height: calc(2712px * 0.23); */
+    width: 20vw;
+    height: auto;
+    /* 最も小さくとも */
+    min-width: 200px;
+
     filter: drop-shadow(-6px 6px 10px rgba(0, 0, 0, 0.5));
 }
 
@@ -202,9 +351,10 @@ header .header-nav {
 
 
 
-/* --------------------------- */
-/*          ABOUT部分           */
-/* --------------------------- */
+
+/*-------------------
+       ABOUT部分
+--------------------*/
 /* アバウトの中一括 */
 #about>div {
     /* ---- Gridレイアウト ---- */
@@ -267,15 +417,18 @@ header .header-nav {
 
 /* アイコンの大きさ一括 */
 .about-icon {
-    width: calc(1100px * 0.25);
-    height: calc(1100px * 0.25);
+    /* width: calc(1100px * 0.25);
+    height: calc(1100px * 0.25); */
+    width: 20vw;
+    height: auto;
+    min-width: 200px;
 }
 
 
 
-/* --------------------------- */
-/*         下部ボタン部分         */
-/* --------------------------- */
+/*-------------------
+      下部ボタン部分
+--------------------*/
 .link-buttons {
     /* ---- Flexボックス ---- */
     display: flex;
@@ -329,16 +482,16 @@ header .header-nav {
 
 
 
-/* --------------------------- */
-/*         FOOTER部分           */
-/* --------------------------- */
+/*-------------------
+       FOOTER部分
+--------------------*/
 footer {
-	background-color: inherit;
-	width: 100%;
-	text-align: center;
-	margin: 1rem 0;
+    background-color: inherit;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
 }
 
 footer p {
-	color: rgba(120, 120, 120, 1.0);
+    color: rgba(120, 120, 120, 1.0);
 }

@@ -4,16 +4,21 @@
         <meta charset="utf-8">
         <title>HOME | STURTER - 学習支援アプリ</title>
 
+        <!-- ファビコン -->
+        <link rel="icon" type="image/png" href="./img/favicon.ico">
+
         <!-- リセットCSS -->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!-- メインCSS -->
         <link rel="stylesheet" href="./css/style.css">
-        <!-- ファビコン -->
-        <link rel="icon" type="image/png" href="./img/favicon.ico">
+
+        <!-- jQueryのロード -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <!-- JavaScript -->
+        <script src="./js/main.js" defer></script>
     </head>
     <body>
         <header>
-            <!-- <div class="left-area"></div> -->
             <div class="header-logo">
                 <a href="index.html">
                     <img src="./img/Top_Logo.png" alt="スターター" id="top-logo">
@@ -21,13 +26,22 @@
                     <span id="logo-text">dexit Works</span> -->
                 </a>
             </div>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html">How To</a></li>
-                </ul>
-            </nav>
+            <div class="header-nav">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html">How To</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hamburger_toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hamburger_mask">
+            </div>
         </header>
         <main>
             <div class="top-area">
