@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
+        <!-- 文字コード -->
         <meta charset="utf-8">
+
+        <!-- タイトル -->
         <title>HOME | STURTER - 学習支援アプリ</title>
+
+        <!-- ファビコン -->
+        <link rel="icon" type="image/png" href="./img/favicon.ico">
+
+        <!-- スマートフォンホーム画面用アイコン -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/STURTER_site_icon_180.png">
+
+        <!-- ビューポートの設定 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
         <!-- リセットCSS -->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!-- メインCSS -->
         <link rel="stylesheet" href="./css/style.css">
-        <!-- ファビコン -->
-        <link rel="icon" type="image/png" href="./img/favicon.ico">
+
+        <!-- jQueryのロード -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+        <!-- JavaScript -->
+        <script src="./js/main.js" defer></script>
     </head>
     <body>
         <header>
-            <!-- <div class="left-area"></div> -->
             <div class="header-logo">
                 <a href="index.html">
                     <img src="./img/Top_Logo.png" alt="スターター" id="top-logo">
-                    <!-- <img src="images/hp_icon.svg" alt="" width="50" height="50">
-                    <span id="logo-text">dexit Works</span> -->
                 </a>
             </div>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html">How To</a></li>
-                </ul>
-            </nav>
+            <div class="header-nav">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html">How To</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hamburger-bg">
+                <div class="hamburger-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="hamburger-mask">
+            </div>
         </header>
         <main>
             <div class="top-area">
@@ -36,7 +60,7 @@
                 </div>
                 <div class="grid-top-text">
                     <section>
-                        <h1>アナログ＋デジタル<br>良いとこ取りの勉強支援アプリ！</h1>
+                        <h1>アナログ＋デジタル<br>良いとこ取りの<wbr>勉強支援<wbr>アプリ！</h1>
                         <p>問題の「答え」を登録するだけで、あなただけのデジタル管理システムの出来上がり！</p>
                         <a href="index.html">
                             <img src="./img/App_Store_Badge.svg" alt="AppStoreへのリンクボタン" class="storelink-icon">
@@ -52,7 +76,7 @@
             <div id="about">
                 <div class="about-01">
                     <div class="grid-about-title">
-                        <h1>本とスマホで資格勉強を効率化！</h1>
+                        <h1>本とスマホで<wbr>資格勉強を<wbr>効率化！</h1>
                     </div>
                     <div class="grid-about-icon">
                         <img src="./img/Top_Icon_01_2x.png" alt="スマートフォンと本のアイコン" class="about-icon">
@@ -67,7 +91,7 @@
                 </div>
                 <div class="about-02">
                     <div class="grid-about-title">
-                        <h1>必要なのは「答え」だけ！</h1>
+                        <h1>必要なのは<wbr>「答え」だけ！</h1>
                     </div>
                     <div class="grid-about-icon">
                         <img src="./img/Top_Icon_02_2x.png" alt="答えのアイコン" class="about-icon">

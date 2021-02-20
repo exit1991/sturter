@@ -1,5 +1,13 @@
+/*-------------------
+         MEMO
+--------------------*/
+/* 検索MEMO：(?!(;|{|}|/)).$ */
 
-/* フォント読み込み */
+
+
+/*-------------------
+       WEBフォント
+--------------------*/
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
 @font-face {
     font-family: "DIN Alternate Bold";
@@ -8,229 +16,414 @@
 }
 
 
-/* 検索MEMO：(?!(;|{|}|/)).$ */
 
+/*-------------------
+        全体部分
+--------------------*/
+/* ROOT */
+html {
+    font-size: 14px;
+}
 
-/* --------------------------- */
-/*          全体部分            */
-/* --------------------------- */
+/* BODY */
 body {
-    /* ---- フォント ---- */
     font-family: 'M PLUS 1p', sans-serif;
     font-weight: normal;
     font-size: 1rem;
     color: rgba(70, 70, 70, 1.0);
 
-    /* ---- 背景 ---- */
     background-image: url(../img/whitewall_10per.png),
                       url(../img/Top_BG_01.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-
-/* --------------------------- */
-/*         リンク文字設定         */
-/* --------------------------- */
+/* 全てのリンク文字 */
 a {
-    /* ---- リンクの下線（つけない） ---- */
     text-decoration: none;
-    /* ---- 文字色（親を継承） ---- */
     color: inherit;
 }
 
 
-/* --------------------------- */
-/*         HEADER部分           */
-/* --------------------------- */
+
+/*-デスクトップ版---------
+        全体部分
+--------------------*/
+@media screen and (min-width: 600px) {
+    /* ROOT */
+    /* 基本は1.2vw、ただし10pxより小さくはしない */
+    html {
+        font-size: max(1.2vw, 10px);
+    }
+}
+
+
+
+/*-------------------
+      HEADER部分
+--------------------*/
 /* ナビゲーションバー本体 */
 header {
-    /* ---- フォント ---- */
     font-family: "DIN Alternate Bold", sans-serif;
     font-weight: bold;
     font-size: 2rem;
     color: rgba(100, 100, 100, 1.0);
 
-    /* ---- Gridレイアウト ---- */
     display: grid;
-    /* 列数・行数の数は幅を指定（frで均等幅になる） */
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
     grid-template-areas: "header-left header-center header-right";
-    /* それぞれのセル内のコンテンツの位置設定（justify：横／align：縦） */
     justify-items: center;
     align-items: center;
 
-
-    /* ---- 色 ---- */
-    /* color: rgba(252, 252, 252, 1.0); */
-
-    /* ---- 余白 ---- */
-    margin-top: 0.8rem;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0.8rem 0;
+    margin: 0;
 }
 
 
 /* Gridレイアウト */
+/* 本来は grid-row などで線番号で指定するが */
+/* 名前を設定していれば名前の指定だけでOK */
 header .header-logo {
-    /* 本来は grid-row などで線番号で指定するが */
-    /* 名前を設定していれば名前の指定だけでOK */
     grid-area: header-center;
 }
 header .header-nav {
-    /* 本来は grid-row などで線番号で指定するが */
-    /* 名前を設定していれば名前の指定だけでOK */
     grid-area: header-right;
 }
 
-
 /* ロゴ画像 */
+/* 画像の縦位置を設定しないと、文字用に下に余白が出来てしまう */
 #top-logo {
-    /* ---- サイズ ---- */
     width: calc(2000px * 0.1);
     height: calc(600px * 0.1);
-
-    /* ---- 位置 ---- */
-    /* 画像の縦位置を設定しないと、文字用に下に余白が出来てしまう */
     vertical-align: middle;
 }
 
 
-/* メインナビゲーション全体 */
-.header-nav ul {
-    /* ---- Flexレイアウト ---- */
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    /* ---- 余白 ---- */
-    margin: 0.5rem 0rem;
+/* ハンバーガーメニュー関連 */
+.hamburger-bg {
+    display: block;
+    position: fixed;
+    top: 5px;
+    right: 9px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    visibility: visible;
+    z-index: 3;
+    background-color: #fff;
+}
+.hamburger-toggle {
+    display: block;
+    /* position: relative; */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 3.5rem;
+    height: 3rem;
+    visibility: visible;
+    z-index: 3;
+}
+.hamburger-toggle span {
+    display: block;
+    width: 100%;
+    height: 0.7rem;
+    background-color: #333;
+    border-radius: 1rem;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+}
+.hamburger-toggle span:nth-child(1) {
+    top: 0;
+}
+.hamburger-toggle span:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.hamburger-toggle span:nth-child(3) {
+    bottom: 0;
+}
+.hamburger-toggle.show span:nth-child(1) {
+    transform: translateY(1.12rem) rotate(-45deg);
+}
+.hamburger-toggle.show span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-toggle.show span:nth-child(3) {
+    transform: translateY(-1.12rem) rotate(45deg);
 }
 
-/* ナビゲーションの１項目 */
+/* nav要素 */
+.main-nav {
+    position: fixed;
+    top: 6rem;
+    right: -5rem;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, right 1s;
+    z-index: 4;
+}
+/* nav要素（メニュー開いた時） */
+.main-nav.show {
+    right: 5rem;
+    opacity: 1;
+    visibility: visible;
+}
+/* メニューの１項目 */
 .header-nav ul li {
-    /* ---- フォント ---- */
-    font-size: 1.2rem;
+    font-size: 3rem;
     text-transform: uppercase;
-
-    /* ---- リストの表示設定 ---- */
     list-style-type: none;
-
-    /* ---- ボックスの下線 ---- */
-    border-bottom: 0.15rem solid;
-
-    /* ---- 余白 ---- */
-    padding: 0.6rem 0.8rem;
-    margin: 0rem 0.5rem;
-}
-
-
-
-/* メニューのトランジション設定 */
-.header-nav ul li {
+    padding: 1rem 0;
+    margin: 0.5rem 0;
     transition-property: color;
     transition-duration: 0.5s;
 }
-
-/* メニュー選択時 */
+/* メニューの１項目（選択時） */
 .header-nav ul li:hover {
     color: rgba(228, 95, 95, 1.0);
 }
+/* メニュー表示時の画面マスク */
+.hamburger-mask {
+    display: block;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+/* メニュー表示時の画面マスク（メニュー開いた時） */
+.hamburger-mask.show {
+    visibility: visible;
+    opacity: .8;
+    cursor: pointer;
+    transition: opacity 1s;
+}
 
 
 
-/* --------------------------- */
-/*          メイン部分           */
-/* --------------------------- */
 
+
+
+
+
+
+
+/*-デスクトップ版---------
+       HEADER部分
+--------------------*/
+@media screen and (min-width: 600px) {
+
+    header {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0;
+        margin: 0.8rem 0 0;
+    }
+
+    /* ハンバーガーメニューの非表示 */
+    .hamburger-bg {
+        visibility: hidden;
+    }
+    .hamburger-toggle {
+        visibility: hidden;
+    }
+
+    /* nav要素 */
+    .main-nav {
+        position: inherit;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* ナビゲーションの表示 */
+    .header-nav {
+        display: inherit;
+    }
+
+    /* メインナビゲーション全体 */
+    .header-nav ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0.5rem 0rem;
+    }
+
+    /* ナビゲーションの１項目 */
+    .header-nav ul li {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        list-style-type: none;
+        border-bottom: 0.15rem solid;
+        padding: 0.6rem 0.8rem;
+        margin: 0rem 0.5rem;
+    }
+
+}
+
+
+
+
+
+
+/*-------------------
+       メイン部分
+--------------------*/
 /* トップエリア */
 .top-area {
-    /* ---- Gridレイアウト ---- */
-    display: grid;
-    /* 列数・行数の数は幅を指定（frで均等幅になる） */
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto;
-    /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
-    grid-template-areas: "grid-phone-image grid-top-text";
-    /* それぞれのセル内のコンテンツの位置設定（justify：横／align：縦） */
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    column-gap: 3rem;
-
-    /* ---- 余白 ---- */
-    margin: 3rem 5rem;;
-}
-
-
-/* Gridレイアウト */
-.top-area .grid-phone-image {
-    /* 本来は grid-row などで線番号で指定するが */
-    /* 名前を設定していれば名前の指定だけでOK */
-    grid-area: grid-phone-image;
-    justify-self: end;
-}
-.top-area .grid-top-text {
-    /* 本来は grid-row などで線番号で指定するが */
-    /* 名前を設定していれば名前の指定だけでOK */
-    grid-area: grid-top-text;
-    justify-self: start;
+    /* width: 100%; */
+    color: inherit;
+    margin: 3rem 0 0;
 }
 
 /* 画面イメージ */
+/* width:1370px, height:2712px */
 #phone-image {
-    width: calc(1370px * 0.23);
-    height: calc(2712px * 0.23);
+    width: 80vw;
+    height: auto;
     filter: drop-shadow(-6px 6px 10px rgba(0, 0, 0, 0.5));
+}
+
+.grid-top-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0 0 5rem;
+    margin: 5rem 0 0;
 }
 
 .grid-top-text h1 {
     font-size: 2.5rem;
-    margin: 0 0 3rem;
+    margin: 3rem 2rem 0;
+    word-break: keep-all;
 }
 
 .grid-top-text p {
     font-size: 1.5rem;
+    margin: 1rem 2rem;
+}
+
+.grid-top-text > section > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-top-text > section > a > p {
+    margin: 0 0 2.5rem;
 }
 
 .grid-top-text .storelink-icon {
-    margin: 6rem 0rem 1rem;
+    margin: 20px 2rem 20px;
+
 }
 
 .grid-top-text .caution p {
     font-size: 0.8rem;
+    margin: 0 2rem;
+}
+
+
+/*-デスクトップ版---------
+       メイン部分
+--------------------*/
+@media screen and (min-width: 600px) {
+    /* トップエリア */
+    .top-area {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: auto;
+        grid-template-areas: "grid-phone-image grid-top-text";
+        justify-items: center;
+        align-items: center;
+        column-gap: 3rem;
+        color: inherit;
+        margin: 3rem 5rem;
+    }
+
+
+    /* Gridレイアウト */
+    /* 本来は grid-row などで線番号で指定するが */
+    /* 名前を設定していれば名前の指定だけでOK */
+    .top-area .grid-phone-image {
+        grid-area: grid-phone-image;
+        justify-self: end;
+    }
+    .top-area .grid-top-text {
+        grid-area: grid-top-text;
+        justify-self: start;
+    }
+
+    /* 画面イメージ */
+    /* width:1370px, height:2712px */
+    #phone-image {
+        width: 20vw;
+        height: auto;
+        min-width: 200px;
+    }
+
+    .grid-top-text {
+        background-color: inherit;
+        padding: 0;
+        margin: 0;
+    }
+
+    .grid-top-text h1 {
+        font-size: 2.5rem;
+        margin: 0 0 3rem;
+        word-break: normal;
+    }
+
+    .grid-top-text p {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .grid-top-text > section > a {
+        display: inherit;
+    }
+
+    .grid-top-text > section > a > p {
+        margin: inherit;
+    }
+
+    .grid-top-text .storelink-icon {
+        margin: 6rem 0rem 1rem;
+    }
+
+    .grid-top-text .caution p {
+        font-size: 0.8rem;
+        margin: inherit;
+    }
+
 }
 
 
 
-/* --------------------------- */
-/*          ABOUT部分           */
-/* --------------------------- */
-/* アバウトの中一括 */
-#about>div {
-    /* ---- Gridレイアウト ---- */
-    display: grid;
-    /* 列数・行数の数は幅を指定（frで均等幅になる） */
-    grid-template-columns: 3fr 3fr 1fr;
-    /* grid-template-columns: 1fr 1fr 2fr 1fr; */
-    grid-template-rows: 1fr 5fr;
-    /* 列に名前を指定（複数行の場合は " " をスペース区切りで後ろに追加する） */
-    grid-template-areas:
-        "grid-about-title grid-about-title grid-about-title"
-        "grid-about-icon grid-about-description none";
-    /* grid-template-areas:
-        "grid-about-title grid-about-title grid-about-title grid-about-title"
-        "none grid-about-icon grid-about-description none"; */
-    /* それぞれのセル内のコンテンツの位置設定（justify：横／align：縦） */
-    justify-items: center;
-    align-items: center;
-    column-gap: 3rem;
 
-    /* ---- フォント ---- */
+
+
+/*-------------------
+       ABOUT部分
+--------------------*/
+/* アバウトの中一括 */
+#about > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: rgba(252, 252, 252, 1.0);
     font-weight: 200;
-
-    /* ---- 余白 ---- */
-    padding: 4rem 4rem;
 }
 
 /* アバウトごとの背景色 */
@@ -243,63 +436,103 @@ header .header-nav {
 
 /* アバウトタイトル部分一括 */
 .grid-about-title {
-    /* ---- Gridレイアウト ---- */
-    grid-area: grid-about-title;
-    /* ---- テキスト設定 ---- */
-    text-align: center;
+    word-break: keep-all;
+    margin: 4rem 3rem 1rem;
 }
 
 /* アバウトのアイコン一括 */
 .grid-about-icon {
-    /* ---- Gridレイアウト ---- */
-    grid-area: grid-about-icon;
-    justify-self: end;
+    margin: 0 3rem;
 }
 
 /* アバウトの詳細部分一括 */
 .grid-about-description {
-    /* ---- Gridレイアウト ---- */
-    grid-area: grid-about-description;
-    justify-self: start;
-    /* ---- テキスト設定 ---- */
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin: 1rem 3rem 4rem;
 }
 
 /* アイコンの大きさ一括 */
 .about-icon {
-    width: calc(1100px * 0.25);
-    height: calc(1100px * 0.25);
+    width: 60vw;
+    height: auto;
+}
+
+
+/*-デスクトップ版---------
+       ABOUT部分
+--------------------*/
+@media screen and (min-width: 600px) {
+    /* アバウトの中一括 */
+    #about > div {
+        display: grid;
+        grid-template-columns: 5fr 7fr 1fr;
+        grid-template-rows: 1fr 5fr;
+        grid-template-areas:
+            "grid-about-title grid-about-title grid-about-title"
+            "grid-about-icon grid-about-description none";
+        justify-items: center;
+        align-items: center;
+        column-gap: 3rem;
+        color: rgba(252, 252, 252, 1.0);
+        font-weight: 200;
+        padding: 4rem 4rem;
+    }
+
+    /* アバウトタイトル部分一括 */
+    .grid-about-title {
+        grid-area: grid-about-title;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* アバウトのアイコン一括 */
+    .grid-about-icon {
+        grid-area: grid-about-icon;
+        justify-self: end;
+        margin: 0;
+    }
+
+    /* アバウトの詳細部分一括 */
+    .grid-about-description {
+        /* font-size: 1.4rem; */
+        font-size: max(1.4rem, 18px);
+        grid-area: grid-about-description;
+        justify-self: start;
+        margin: 0;
+    }
+
+    /* アイコンの大きさ一括 */
+    .about-icon {
+        width: 20vw;
+        height: auto;
+        min-width: 200px;
+    }
 }
 
 
 
-/* --------------------------- */
-/*         下部ボタン部分         */
-/* --------------------------- */
+
+
+/*-------------------
+      下部ボタン部分
+--------------------*/
 .link-buttons {
-    /* ---- Flexボックス ---- */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* ---- フォント ---- */
     color: rgba(252, 252, 252, 1.0);
-    /* ---- 余白 ---- */
     margin: 4rem 3rem;
 }
 
 .link-buttons>div {
-    /* ---- ボックスの大きさ ---- */
     width: 23rem;
 }
 
 .link-buttons>div p {
-    /* ---- フォント ---- */
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    /* ---- ボックスの角丸 ---- */
     border-radius: 3rem;
-    /* ---- 余白 ---- */
     padding: 1rem 1rem;
     margin: 2rem 0;
 }
@@ -320,7 +553,6 @@ header .header-nav {
 .link-buttons>div p:hover {
     transform: translate(-4px, -6px);
     box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
-    /* text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3); */
 }
 .link-buttons>div p:active {
     transform: translate(0px, 0px);
@@ -329,16 +561,16 @@ header .header-nav {
 
 
 
-/* --------------------------- */
-/*         FOOTER部分           */
-/* --------------------------- */
+/*-------------------
+       FOOTER部分
+--------------------*/
 footer {
-	background-color: inherit;
-	width: 100%;
-	text-align: center;
-	margin: 1rem 0;
+    background-color: inherit;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
 }
 
 footer p {
-	color: rgba(120, 120, 120, 1.0);
+    color: rgba(120, 120, 120, 1.0);
 }
