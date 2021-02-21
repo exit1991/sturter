@@ -1,0 +1,118 @@
+
+
+/*-モバイルファースト------
+       メイン部分
+--------------------*/
+
+
+
+
+/*-デスクトップ版---------
+       メイン部分
+--------------------*/
+/* @media screen and (min-width: 600px) {
+
+} */
+
+
+/* 共通 */
+.main-contents li {
+    list-style-position: inside;
+}
+
+
+
+/* トップエリア */
+.main-contents {
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "L C R";
+    justify-items: center;
+    align-items: center;
+    column-gap: 3rem;
+    color: inherit;
+    margin: 3rem 5rem;
+}
+
+
+/* Gridレイアウト */
+main {
+    grid-area: C;
+    justify-self: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 4rem 4rem;
+}
+
+/* 各項目共通 */
+main>div, main>article {
+    padding: 0 0 5rem;
+    border-bottom: solid thin #555;
+}
+
+#page-title {
+    text-align: center;
+    font-size: 2.3rem;
+    text-shadow: #FFF 0 0 8px;
+    background-image: url(../img/Howto_Icon_Top.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+    padding: 4rem 0;
+    margin: 0 0 4rem 0;
+}
+
+.index-box {
+    border: solid medium #555;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+    padding: 1rem 2rem;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+}
+
+.index-box h3 {
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+.index-box a {
+    text-decoration: underline;
+}
+
+
+main h1 {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+}
+main h2 {
+    font-size: 1.3rem;
+    padding: 0.5rem 0 0;
+}
+main h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+main section {
+    padding: 0;
+    margin: 1rem 0;
+    margin: 1rem 0;
+}
+
+.section-head h1 {
+    text-align: center;
+    padding: 3rem 0;
+    margin: 0;
+}
+
+.goto-top-link {
+    text-align: right;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    padding: 0;
+    margin: 3rem 0 0;
+}
