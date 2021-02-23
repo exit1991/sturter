@@ -55,7 +55,22 @@
 
 .grid-top-text .storelink-icon {
     margin: 20px 2rem 20px;
+}
 
+.appstore-icon {
+    margin: 0 0 2rem;
+}
+
+.appstore-icon p {
+    display: inline-block;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg,
+                                rgba(0, 0, 0, 0) 0%,
+                                rgba(0, 0, 0, 0) 50%,
+                                rgba(239, 71, 111, 0.2) 50%,
+                                rgba(239, 71, 111, 0.2) 100%);
+    padding: 0 1rem;
 }
 
 .grid-top-text .caution p {
@@ -128,8 +143,13 @@
     }
 
     .grid-top-text .storelink-icon {
-        margin: 6rem 0rem 1rem;
+        margin: 2rem 1rem 1rem;
     }
+
+    .appstore-icon {
+        margin: 2rem 0;
+    }
+
 
     .grid-top-text .caution p {
         font-size: 0.8rem;
@@ -150,7 +170,7 @@
     flex-direction: column;
     align-items: center;
     color: rgba(252, 252, 252, 1.0);
-    font-weight: 200;
+    font-weight: 300;
 }
 
 /* アバウトごとの背景色 */
@@ -253,7 +273,7 @@
 }
 
 .link-buttons>div {
-    width: 23rem;
+    width: 30rem;
 }
 
 .link-buttons>div p {
