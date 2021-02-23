@@ -53,12 +53,17 @@
             </div>
         </header>
 
+        <!-- トップ部分 -->
+        <div id="page-title">
+            <h1>HOW TO</h1>
+            <p>アプリの使い方</p>
+        </div>
+
         <!-- メイン -->
         <div class="main-contents">
             <main>
                 <div class="page-index">
                     <section>
-                        <h1 id="page-title">アプリの使い方</h1>
                         <div class="index-box">
                             <h3>目次</h3>
                             <ol>
@@ -75,79 +80,85 @@
                 <article id="whatapp">
                     <section>
                         <h1>STURTERとは？</h1>
-                        <p>STURTER（スターター）は、資格勉強をサポートするためのアプリです。</p>
+                        <img src="../assets/img/Top_Logo.png" alt="STURTERロゴ" height="80">
+                        <p><b>STURTER（スターター）</b>は、<mark>資格勉強をサポートするためのアプリ</mark>です。</p>
                         <p>「Your Study Supporter」となることを目指しています。</p>
                         <p>
-                            近年ではWEB問題集など、自分の回答の履歴を残せたり、チェックなどをつけて、
-                            効率的に問題を解いていく事が出来るサービスがあります。
+                            近年ではWEB問題集など、自分の回答の履歴を残すことが出来たり、チェックをつけて、
+                            効率的に問題を解いていく事が出来るサービスがありますが、
+                            すべての資格に対してそういったサービスが存在しているわけではなく、
+                            中には本の参考書や問題集は発売されていながらも、
+                            そういったWEBサービスには対応していない、といったものも数多く存在します。
                         </p>
                         <p>
-                            しかし、すべての資格に対してそういったサービスが存在しているわけではなく、
-                            中には本の参考書や問題集は発売されているが、
-                            そういったWEBサービスは対応していない、というものも数多く存在します。
-                        </p>
-                        <p>
-                            そういった資格の勉強においても、チェックなどの機能で効率的に行うことを目指してこのアプリを作成しました。
+                            そういった資格の勉強においても、
+                            <mark>チェックなどの機能で効率的に行う</mark>ことを目指してこのアプリを作成しました。
                             なお、このアプリは個人で開発しています。
                         </p>
                         <p>
                             <strong>※作成した問題集などの情報を、個人の利用範囲外での使用しないでください。</strong>
                         </p>
                     </section>
-                    <section class="section-foot">
+                    <footer>
                         <div class="goto-top-link">
-                            <p><a href="./index.html#header-top">▲ トップへ戻る</a></p>
+                            <p><a href="#whatapp">▲ 項目トップへ戻る</a></p>
+                            <p><a href="#header-top">▲ ページトップへ戻る</a></p>
                         </div>
-                    </section>
+                    </footer>
                 </article>
                 <article id="csv-load-howto">
                     <section class="section-head">
                         <h1>CSV読み込み手順</h1>
-                        <h2>大まかな流れ</h2>
-                        <ol>
-                            <li>CSVデータを用意する</li>
-                            <li>アプリに取り込む</li>
-                            <li>プロジェクトに読み込む</li>
-                        </ol>
+                        <div class="index-box">
+                            <h3>大まかな流れ</h3>
+                            <ul>
+                                <li>CSVデータを用意する</li>
+                                <li>アプリに取り込む</li>
+                                <li>プロジェクトに読み込む</li>
+                            </ol>
+                        </div>
                     </section>
                     <section class="section-no-01">
-                        <h1>1. CSVデータを用意しよう</h1>
-                        <h2>1-1. CSVのテンプレートをダウンロードしよう</h2>
-                        <p>初めて行う場合は、以下のボタンを押してテンプレートをダウンロードしてください。</p>
-
-                        <p><a href="#">CSVテンプレートをダウンロード（Shift_JIS ／ 170 byte）</a></p>
-                        <p><a href="#">CSVテンプレートをダウンロード（UTF-8 ／ 231 byte）</a></p>
-
-                        <h3>文字コードについて</h3>
-                        <dl>
-                            <dt>Shift_JIS</dt>
-                            <dd>Excelで作業する場合にオススメ</dd>
-                            <dt>UTF-8</dt>
-                            <dd>Excel以外での作業、主にMacを使用している場合にオススメ</dd>
-                        </dl>
-
-                        <h2>1-2. CSVにデータを入力しよう</h2>
+                        <h1>CSVデータを用意しよう</h1>
+                        <h2>CSVのテンプレートをダウンロードしよう</h2>
+                        <p>初めてCSVを作成する場合は、以下のボタンよりテンプレートをダウンロードしてください。</p>
+                        <div class="download-btn-set">
+                            <p class="download-btn"><a href="../assets/data/contents_sheet_sjis.csv" download="contents_sheet_sjis.csv">CSVテンプレートをダウンロード（Shift_JIS／170 byte）</a></p>
+                            <p class="download-btn"><a href="../assets/data/contents_sheet_utf8.csv" download="contents_sheet_utf8.csv">CSVテンプレートをダウンロード（UTF-8／231 byte）</a></p>
+                        </div>
+                        <div class="point-howto">
+                            <h3>文字コードについて</h3>
+                            <dl>
+                                <dt>Shift_JIS</dt>
+                                <dd>Excelで作業する場合にオススメ</dd>
+                                <dt>UTF-8</dt>
+                                <dd>Excel以外での作業、主にMacを使用している場合にオススメ</dd>
+                            </dl>
+                        </div>
+                        <h2>CSVにデータを入力しよう</h2>
                         <p>
                             ダウンロードしたテンプレートにデータを入力してください。
                             編集にはExcelや各テキストエディタ、iPhone標準の表計算アプリであるNumbersなどが使用できます
                             （Numbersで作業する場合は、CSVへの書き出しが必要です）。
                         </p>
-                        <p>CSVのデータ入力手順はこちら</p>
-                        <p>CSVサンプルデータはこちら</p>
+                        <figure>
+                            <img src="../assets/img/screenshot/excel-sample.png" alt="エクセル入力イメージ" height="100" class="screenshot-img">
+                            <figcaption>ExcelによるCSVデータの入力イメージ</figcaption>
+                        </figure>
+                        <div class="simple-link">
+                            <p>CSVのデータ入力手順は<a href="#csv-input-howto">こちら</a></p>
+                            <p>CSVサンプルデータは<a href="#sample-csv-download">こちら</a></p>
+                        </div>
                     </section>
                     <section class="section-no-02">
-                        <h1>2. アプリに取り込もう</h1>
+                        <h1>アプリに取り込もう</h1>
                         <dl>
                             <dt>PCで作成した場合</dt>
                             <dd>
-                                <p>
-                                    Dropbox や Google Drive など、iPhoneで開くことが可能なサービスに、
-                                    作成したCSVデータを取り込みます。
-                                </p>
-                                <p>
-                                    iPhone 側で使用したサービスのアプリで対象のデータを選択して、
-                                    共有メニューを開いて、「STRUTERにコピー」を選択して、アプリ取り込み完了です。
-                                </p>
+                                Dropbox や Google Drive など、iPhoneで開くことが可能なサービスに、
+                                作成したCSVデータを取り込みます。
+                                iPhone 側で使用したサービスのアプリで対象のデータを選択して、
+                                共有メニューを開いて、「STRUTERにコピー」を選択して、アプリ取り込み完了です。
                             </dd>
                             <dt>iPhoneのNumbersアプリで作成した場合</dt>
                             <dd>
@@ -161,33 +172,60 @@
                                 アプリに取り込むことができます。※詳細は後述
                             </dd>
                         </dl>
+                        <figure>
+                            <img src="../assets/img/screenshot/otherapp-share-01.png" alt="取り込みイメージ" height="100" class="screenshot-img">
+                            <figcaption>他のアプリから取り込む際は、<br>共有メニューで「STRUTERにコピー」を選択する</figcaption>
+                        </figure>
                     </section>
                     <section class="section-no-03">
-                        <h1>3. プロジェクトに読み込もう</h1>
-                        <h2>3-1. プロジェクトを作成しよう</h2>
+                        <h1>プロジェクトに読み込もう</h1>
+                        <h2>プロジェクトを作成しよう</h2>
                         <p>
                             プロジェクトとは、あなたの勉強する試験毎の単位です。
                             まだプロジェクトを作成していない場合は、
                             トップメニューから「プロジェクトの新規作成」を押して作成してください。
                         </p>
-                        <h2>3-2. プロジェクトにデータを読み込もう</h2>
+                        <figure>
+                            <img src="../assets/img/screenshot/top-menu-01.png" alt="アプリトップ画面" height="100" class="screenshot-img">
+                            <img src="../assets/img/screenshot/create-project.png" alt="プロジェクト作成画面" height="100" class="screenshot-img">
+                            <figcaption>プロジェクトの簡単な説明は任意です。</figcaption>
+                        </figure>
+                        <h2>プロジェクトにデータを読み込もう</h2>
                         <p>
-                            トップメニューから作成したプロジェクトを選択して、下部の「データの入出力」ボタンを押し、
-                            「CSV／PDFをプロジェクトに読み込む」ボタンを押します。
-                            2.で取り込んだデータが一覧で表示されるので、今回読み込むデータを選択します。
-                            プロジェクトに初めてデータを読み込む場合、また既にデータがある場合でもそのデータを削除して問題ない場合は、
-                            「既存データをすべて削除してから読み込む」を押します。
-                            エラーが表示されなければ読み込み完了です。
-                            プロジェクトの問題選択画面まで戻って、出題数などを設定して演習を開始してください！
+                            <ol>
+                                <li>
+                                    トップメニューから作成したプロジェクトを選択して、下部の「データの入出力」ボタンを押し、
+                                    「CSV／PDFをプロジェクトに読み込む」ボタンを押します。
+                                </li>
+                                <li>
+                                    取り込んだデータが一覧で表示されるので、今回読み込むデータを選択します。
+                                </li>
+                                <li>
+                                    プロジェクトに初めてデータを読み込む場合、また既にデータがある場合でもそのデータを削除して問題ない場合は、
+                                    「既存データをすべて削除してから読み込む」を押します。
+                                </li>
+                                <li>
+                                    エラーが表示されなければ読み込み完了です。
+                                    プロジェクトの問題選択画面まで戻って、出題数などを設定して演習を開始してください！
+                                </li>
+                            </ol>
                         </p>
+                        <figure>
+                            <img src="../assets/img/screenshot/io-menu-01.png" alt="データの入出力画面" height="100" class="screenshot-img">
+                            <img src="../assets/img/screenshot/input-menu-01.png" alt="読込メニュー画面" height="100" class="screenshot-img">
+                            <figcaption>「CSV／PDFをプロジェクトに読み込む」を押して、ファイルを選択後、読込メニューに遷移します。</figcaption>
+                        </figure>
                     </section>
-                    <section class="section-foot">
-                        <p>読み込みメニューの説明はこちら</p>
-                        <p>PDFの読み込み手順はこちら</p>
-                        <div class="goto-top-link">
-                            <p><a href="./index.html#header-top">▲ トップへ戻る</a></p>
+                    <footer>
+                        <div class="simple-link">
+                            <p>読み込みメニューの説明は<a href="#load-menu-description">こちら</a></p>
+                            <p>PDFの読み込み手順は<a href="#pdf-load-howto">こちら</a></p>
                         </div>
-                    </section>
+                        <div class="goto-top-link">
+                            <p><a href="#csv-load-howto">▲ 項目トップへ戻る</a></p>
+                            <p><a href="#header-top">▲ ページトップへ戻る</a></p>
+                        </div>
+                    </footer>
                 </article>
                 <article id="pdf-load-howto">
                     <section class="section-head">
@@ -197,45 +235,62 @@
                             PDFを問題中に表示させるには、このPDFの取り込みと、
                             CSVデータファイルの「PDF問題ページ」「PDF解答ページ」の定義が必要です。
                         </p>
-                        <h2>大まかな流れ</h2>
-                        <ol>
-                            <li>アプリに取り込む</li>
-                            <li>プロジェクトに読み込む</li>
-                        </ol>
+                        <div class="index-box">
+                            <h3>大まかな流れ</h2>
+                            <ul>
+                                <li>アプリに取り込む</li>
+                                <li>プロジェクトに読み込む</li>
+                            </ol>
+                        </div>
                     </section>
                     <section class="section-no-01">
-                        <h1>1. アプリに取り込もう</h1>
+                        <h1>アプリに取り込もう</h1>
                         <p>
                             CSVデータのアプリ取り込み手順と同様に、
                             他のファイル管理アプリから 共有メニュー を使用して取り込むか、
                             iCloud上のPDFデータをアプリ内で取り込んでください。
                         </p>
-                        <p>
-                            CSVのアプリ取り込み手順はこちら
-                        </p>
-                    </section>
-                    <section class="section-no-02">
-                        <h1>2.プロジェクトに読み込む</h1>
-                        <p>
-                            読み込み手順もCSVデータの読み込み手順とほぼ同様です。
-                            トップメニューから読み込みたいプロジェクトを選択して、下部の「データの入出力」ボタンを押し、
-                            「CSV／PDFをプロジェクトに読み込む」ボタンを押します。
-                            1.で取り込んだデータが一覧で表示されるので、今回読み込むデータ（PDF）を選択します。
-                            表示される「プロジェクトにPDFを設定する」ボタンを押します。
-                            エラーが表示されなければ読み込み完了です。
-                            読み込んだデータは「データの入出力」画面の「現在のPDFを確認」ボタンを押して確認することができます。
-                        </p>
-                        <p>
-                            なお、演習中の表示には、この読み込み作業の他に、CSVデータ内の「PDF問題ページ」「PDF解答ページ」の定義が必要です。
-                        </p>
-                    </section>
-                    <section class="section-foot">
-                        <p>CSVの読み込み手順はこちら</p>
-                        <p>CSVのデータ入力手順はこちら</p>
-                        <div class="goto-top-link">
-                            <p><a href="./index.html#header-top">▲ トップへ戻る</a></p>
+                        <div class="simple-link">
+                            <p>CSVのアプリ取り込み手順は<a href="#csv-load-howto">こちら</a></p>
                         </div>
                     </section>
+                    <section class="section-no-02">
+                        <h1>プロジェクトに読み込もう</h1>
+                        <p>
+                            読み込み手順もCSVデータの読み込み手順とほぼ同様です。
+                        </p>
+                        <p>
+                            <ol>
+                                <li>
+                                    トップメニューから読み込みたいプロジェクトを選択して、下部の「データの入出力」ボタンを押し、
+                                    「CSV／PDFをプロジェクトに読み込む」ボタンを押します。
+                                </li>
+                                <li>
+                                    取り込んだデータが一覧で表示されるので、今回読み込むデータ（PDF）を選択します。
+                                </li>
+                                <li>
+                                    表示される「プロジェクトにPDFを設定する」ボタンを押します。
+                                </li>
+                                <li>
+                                    エラーが表示されなければ読み込み完了です。
+                                    読み込んだデータは「データの入出力」画面の「現在のPDFを確認」ボタンを押して確認することができます。
+                                </li>
+                            </ol>
+                        </p>
+                        <p>
+                            なお、演習中の表示には、この読み込み作業の他に、<mark>CSVデータ内の「PDF問題ページ」「PDF解答ページ」の定義が必要</mark>です。
+                        </p>
+                    </section>
+                    <footer>
+                        <div class="simple-link">
+                            <p>CSVの読み込み手順は<a href="#csv-load-howto">こちら</a></p>
+                            <p>CSVのデータ入力手順は<a href="#csv-input-howto">こちら</a></p>
+                        </div>
+                        <div class="goto-top-link">
+                            <p><a href="#pdf-load-howto">▲ 項目トップへ戻る</a></p>
+                            <p><a href="#header-top">▲ ページトップへ戻る</a></p>
+                        </div>
+                    </footer>
                 </article>
                 <article id="load-menu-description">
                     <section class="section-head">
@@ -247,9 +302,13 @@
                             データ多い場合などは先に「バックアップコンテンツデータを出力」で
                             バックアップを取ることをおすすめします。
                         </p>
+                        <figure>
+                            <img src="../assets/img/screenshot/input-menu-01.png" alt="読込メニュー画面" height="100" class="screenshot-img">
+                            <figcaption>データの入出力画面で「CSV／PDFをプロジェクトに読み込む」を押すと、読込メニューに遷移します。</figcaption>
+                        </figure>
                     </section>
                     <section class="section-no-01">
-                        <h2>問題データの追加</h2>
+                        <h2>問題情報の追加</h2>
                         <dl>
                             <dt>既存データをすべて削除してから読み込む</dt>
                             <dd>
@@ -278,10 +337,13 @@
                                 なお、問題IDが未指定の問題があった場合、自動的に一意の問題IDが割り振られます。
                             </dd>
                         </dl>
-                        <p>
-                            ※アプリ側で自動的に割り振られる問題IDは一意のものを設定するため桁の多いIDとなりますので、
-                            なるべくCSVデータ上で定義するのがおすすめです。
-                        </p>
+                        <div class="point-howto">
+                            <h3></h3>
+                            <p>
+                                アプリ側で自動的に割り振られる問題IDは一意のものを設定するため桁の多いIDとなりますので、
+                                なるべくCSVデータ上で定義するのがおすすめです。
+                            </p>
+                        </div>
                     </section>
                     <section class="section-no-02">
                         <h2>データの復元</h2>
@@ -302,11 +364,12 @@
                             </dd>
                         </dl>
                     </section>
-                    <section class="section-foot">
+                    <footer>
                         <div class="goto-top-link">
-                            <p><a href="./index.html#header-top">▲ トップへ戻る</a></p>
+                            <p><a href="#load-menu-description">▲ 項目トップへ戻る</a></p>
+                            <p><a href="#header-top">▲ ページトップへ戻る</a></p>
                         </div>
-                    </section>
+                    </footer>
                 </article>
                 <article id="csv-input-howto">
                     <section class="section-head">
@@ -316,6 +379,10 @@
                             <li>２行目は各項目の名前です。変更しても影響はありませんが、この行に問題データを登録しても問題としては反映されません。</li>
                             <li>３行目以降を問題データとして入力してください。</li>
                         </ul>
+                        <figure>
+                            <img src="../assets/img/screenshot/excel-template.png" alt="テンプレートCSVイメージ" height="100" class="screenshot-img">
+                            <figcaption>テンプレートは３行目以降何も入力されていない状態です。</figcaption>
+                        </figure>
                     </section>
                     <section class="section-no-01">
                         <h1>各項目について</h1>
@@ -323,10 +390,13 @@
                             <dt>問題ID</dt>
                             <dd>
                                 <p>
-                                    問題を識別する為のIDです。
+                                    問題を識別する為のIDで、同じプロジェクト内で重複しない必要があります。
+                                </p>
+                                <p>
                                     このIDを指定して、先に取り込んだデータの修正などを行うことができます。
-                                    同じプロジェクト内で重複しない必要があります。
-                                    なお省略可能ですが、その場合は取り込み時に自動的に一意の問題IDが割り振られます。
+                                </p>
+                                <p>
+                                    省略可能ですが、その場合は取り込み時に自動的に一意の問題IDが割り振られます。
                                     アプリ側で自動的に割り振られる問題IDは一意のものを設定するため桁の多いIDとなりますので、
                                     なるべくCSVデータ上で定義することがオススメです。
                                 </p>
@@ -337,7 +407,11 @@
                             <dd>
                                 <p>
                                     問題をカテゴリーに分けたい時に設定することができます。
+                                </p>
+                                <p>
                                     カテゴリーを設定すると、問題選択時にカテゴリー単位の出題設定をすることが出来ます。
+                                </p>
+                                <p>
                                     省略可能です。
                                 </p>
                                 <h3>【例】</h3>
@@ -347,21 +421,29 @@
                             <dd>
                                 <p>
                                     問題のタイトルとなる部分です。
+                                </p>
+                                <p>
                                     省略可能ではありますが、演習中に問題を識別するために指定するのがオススメです。
                                 </p>
                                 <h3>【例】</h3>
-                                <p>問題1-1、問題1-2 など</p>
+                                <p>問題1-1、問題1-2　など</p>
                             </dd>
                             <dt>問題文</dt>
                             <dd>
                                 <p>
                                     表示する問題文となる部分です。
+                                </p>
+                                <p>
                                     ExcelやNumbersではセル内改行を使用することによって、
                                     改行表示させることが可能です（その際の最終的なCSVの改行コードは、LF か CRLF である必要があります）。
-                                    なおこの項目については「省略をする」のがオススメです。
-                                    問題文はお手持ちの参考書・問題文や、PDFデータを使用することで時間短縮、
+                                </p>
+                                <p>
+                                    なお、この項目については「省略をする」のがオススメです。
+                                    問題文はお手持ちの参考書・問題文や、PDFデータを使用することで、時間の短縮や、
                                     モチベーションの維持に繋がります。
-                                    なお、参考書の問題ページや解答ページは、
+                                </p>
+                                <p>
+                                    参考書の問題ページや解答ページは、
                                     「問題ページ」「解答ページ」の項目で設定することができます。
                                 </p>
                             </dd>
@@ -370,6 +452,8 @@
                                 <p>
                                     問題の答えとなる部分です。
                                     問題の正誤情報を記録するには、この項目の指定が必須です。
+                                </p>
+                                <p>
                                     選択肢の問題で答えが複数ある場合は、「_」（半角アンダーバー）区切りで指定してください。
                                 </p>
                                 <h3>【例】</h3>
@@ -381,16 +465,20 @@
                             <dd>
                                 <p>
                                     解答の際の選択肢を指定する項目です。
-                                    「答え」の項目同様、「_」（半角アンダーバー）区切りで指定してください。
-                                    入力問題する場合は、「*」（半角アスタリスク）を単独で指定してください。
-                                    なお省略可能で、その場合は「A〜N」（全て大文字）が選択肢となります。
+                                </p>
+                                <p>
+                                    「答え」の項目同様、「_」（半角アンダーバー）区切りで指定し、
+                                    入力問題とする場合は、「*」（半角アスタリスク）を単独で指定してください。
+                                </p>
+                                <p>
+                                    省略可能で、その場合は「a〜n」（全て小文字）が選択肢となります。
                                 </p>
                                 <h3>【例（選択問題の場合）】</h3>
                                 <p>A_B_C_D、a_b_c_d、1_2_3_4_5、あ_い_う　など</p>
                                 <h3>【例（入力問題の場合）】</h3>
                                 <p>*</p>
                             </dd>
-                            <dt>問題ページ・解答ページ</dt>
+                            <dt>問題ページ／解答ページ</dt>
                             <dd>
                                 <p>
                                     お手持ちの参考書・問題集のページを入力しておくと、
@@ -400,7 +488,7 @@
                                 <h3>【例】</h3>
                                 <p>1、64、128　など</p>
                             </dd>
-                            <dt>PDF問題ページ・PDF解答ページ</dt>
+                            <dt>PDF問題ページ／PDF解答ページ</dt>
                             <dd>
                                 <p>
                                     PDFを設定している場合に、その問題文・解答のページを指定するために設定する項目です。
@@ -410,7 +498,9 @@
                                 </p>
                                 <h3>【例】</h3>
                                 <p>1、64、128　など</p>
-                                <p>PDFの読み込み手順はこちら</p>
+                                <div class="simple-link">
+                                    <p>PDFの読み込み手順は<a href="#pdf-load-howto">こちら</a></p>
+                                </div>
                             </dd>
                             <dt>その他の情報</dt>
                             <dd>
@@ -422,31 +512,37 @@
                             </dd>
                         </dl>
                     </section>
-                    <section class="section-foot">
+                    <footer>
                         <div class="goto-top-link">
-                            <p><a href="./index.html#header-top">▲ トップへ戻る</a></p>
+                            <p><a href="#csv-input-howto">▲ 項目トップへ戻る</a></p>
+                            <p><a href="#header-top">▲ ページトップへ戻る</a></p>
                         </div>
-                    </section>
+                    </footer>
                 </article>
                 <article id="sample-csv-download">
                     <section class="section-no-01">
                         <h1>サンプルデータダウンロード</h1>
-                        <p>以下のボタンでCSVのサンプルデータをダウンロードすることができます。</p>
-                        <p><a href="#">CSVサンプルデータをダウンロード（Shift_JIS ／ 974 byte）</a></p>
-                        <p><a href="#">CSVサンプルデータをダウンロード（UTF-8 ／ 1 KB）</a></p>
-                        <h3>文字コードについて</h3>
-                        <dl>
-                            <dt>Shift_JIS</dt>
-                            <dd>Excelで作業する場合にオススメ</dd>
-                            <dt>UTF-8</dt>
-                            <dd>Excel以外での作業、主にMacを使用している場合にオススメ</dd>
-                        </dl>
-                    </section>
-                    <section class="section-foot">
-                        <div class="goto-top-link">
-                            <p><a href="./index.html#header-top">▲ トップへ戻る</a></p>
+                        <p>以下のボタンからCSVのサンプルデータをダウンロードすることができます。</p>
+                        <div class="download-btn-set">
+                            <p class="download-btn"><a href="../assets/data/sample_tokyo_sjis.csv" download="sample_tokyo_sjis.csv">CSVサンプルデータをダウンロード（Shift_JIS／974 byte）</a></p>
+                            <p class="download-btn"><a href="../assets/data/sample_tokyo_utf8.csv" download="sample_tokyo_utf8.csv">CSVサンプルデータをダウンロード（UTF-8／1 KB）</a></p>
+                        </div>
+                        <div class="point-howto">
+                            <h3>文字コードについて</h3>
+                            <dl>
+                                <dt>Shift_JIS</dt>
+                                <dd>Excelで作業する場合にオススメ</dd>
+                                <dt>UTF-8</dt>
+                                <dd>Excel以外での作業、主にMacを使用している場合にオススメ</dd>
+                            </dl>
                         </div>
                     </section>
+                    <footer>
+                        <div class="goto-top-link">
+                            <p><a href="#sample-csv-download">▲ 項目トップへ戻る</a></p>
+                            <p><a href="#header-top">▲ ページトップへ戻る</a></p>
+                        </div>
+                    </footer>
                 </article>
             </main>
         </div>

@@ -260,13 +260,13 @@ header .header-nav {
 /*--------------------
        FOOTER部分
 --------------------*/
-footer {
+body>footer {
     background-color: inherit;
     width: 100%;
     text-align: center;
     margin: 1rem 0;
 }
 
-footer p {
+body>footer p {
     color: rgba(120, 120, 120, 1.0);
 }
