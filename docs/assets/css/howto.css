@@ -6,19 +6,9 @@
 
 
 
-/*-モバイルファースト------
+/*--------------------
         全体部分
 --------------------*/
-
-
-/*-デスクトップ版---------
-        全体部分
---------------------*/
-/* @media screen and (min-width: 600px) {
-
-} */
-
-
 /* BODY */
 body {
     background-size: cover;
@@ -43,42 +33,28 @@ p {
 
 
 
+
+
+
 /*-モバイルファースト------
        メイン部分
 --------------------*/
-
-
-
-
-/*-デスクトップ版---------
-       メイン部分
---------------------*/
-/* @media screen and (min-width: 600px) {
-
-} */
-
-
-
+/* ページタイトル */
 #page-title {
     display: flex;
-    font-size: 1.5rem;
-    /* text-shadow: #FFF 0 0 8px; */
-    color: #777;
-    /* text-shadow: 3px 0px 5px rgba(0,253,234,0.3), 2px 2px 7px rgba(134,146,251,0.9); */
-    height: 70vh;
-    width: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
+    color: #777;
+    height: 70vh;
+    width: auto;
 }
-
 #page-title h1 {
     font-family: 'RocknRoll One', sans-serif;
 }
 
-
-
-/* 共通 */
+/* リストの共通設定 */
 .main-contents li {
     list-style-position: inside;
 }
@@ -87,42 +63,28 @@ p {
 
 /* トップエリア */
 .main-contents {
-    display: grid;
-    grid-template-columns: 1fr 18fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "L C R";
-    justify-items: center;
-    align-items: center;
-    column-gap: 3rem;
     color: inherit;
-    margin: 3rem 5rem;
+    margin: 3rem 2rem;
 }
-
 
 /* Gridレイアウト */
 main {
-    grid-area: C;
-    justify-self: center;
     background-color: rgba(255, 255, 255, 1);
-    padding: 5rem 4rem 4rem;
+    padding: 2rem 2rem 4rem;
 }
 
 /* 各項目共通 */
 main>div, main>article {
     padding: 0 0 5rem;
-    /* border-bottom: solid thin #555; */
     border-bottom: dotted thin #555;
 }
-
 
 .index-box, .point-howto {
     border: solid medium #777;
     border-radius: 1.5rem;
     background-color: #FFF;
     padding: 1rem 2rem;
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin: 6rem auto;
+    margin: 3rem auto;
     width: 20em;
 
 }
@@ -141,7 +103,6 @@ main>div, main>article {
 .index-box a {
     text-decoration: underline;
 }
-
 
 
 main h1 {
@@ -168,9 +129,9 @@ main section {
     text-align: center;
     padding: 0;
     margin: 8rem auto 6rem;
-    /* text-decoration: underline dotted; */
 }
 
+/* 戻るリンク */
 .goto-top-link {
     text-align: right;
     font-size: 0.8rem;
@@ -178,11 +139,14 @@ main section {
     padding: 0;
     margin: 3rem 0 0;
 }
+.goto-top-link a::before {
+    content: "▲ ";
+}
+
+
 
 [class^="section-no"] h1 {
     color: #333;
-    /* 0077b6 */
-    /* border-left: solid 1.5rem #80D2F2; */
     border-left: solid 1.5rem #0096c7;
     border-bottom: solid thin #0096c7;
     padding: 0.5rem 0.7rem 0.5rem;
@@ -260,9 +224,6 @@ main section {
     padding: 3rem 0 0;
 }
 
-
-
-
 #csv-input-howto h3 {
     margin: 1rem 0 0;
 }
@@ -287,12 +248,44 @@ main section {
 }
 
 
+/*-デスクトップ版---------
+       メイン部分
+--------------------*/
+@media screen and (min-width: 600px) {
+
+    /* トップエリア */
+    .main-contents {
+        display: grid;
+        grid-template-columns: 1fr 18fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "L C R";
+        justify-items: center;
+        align-items: center;
+        column-gap: 3rem;
+        color: inherit;
+        margin: 3rem 5rem;
+    }
+
+    /* Gridレイアウト */
+    main {
+        grid-area: C;
+        justify-self: center;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 2rem 4rem 4rem;
+    }
+}
 
 
-/*--------------------
+
+
+
+
+
+
+
+/*-モバイルファースト------
         画像関係
 --------------------*/
-
 figure {
     margin: 3rem 0;
     text-align: center;
@@ -308,13 +301,15 @@ figcaption::before {
 }
 
 .screenshot-img {
-    /* width: 60vw; */
-    height: 30rem;
-    /* height: auto; */
-
-    /* border: 0.5rem #bbb solid; */
+    width: 60vw;
+    height: auto;
     box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
-    margin: 0 2rem;
+    margin: 2rem 0;
+}
+
+.screenshot-img.pc-img {
+    width: 70vw;
+    height: auto;
 }
 
 #app-logo-image {
@@ -323,7 +318,21 @@ figcaption::before {
 }
 
 
+/*-デスクトップ版---------
+        画像関係
+--------------------*/
+@media screen and (min-width: 600px) {
+    .screenshot-img {
+        height: 30rem;
+        width: auto;
+        margin: 2rem;
+    }
 
+    .screenshot-img.pc-img {
+        width: 60vw;
+        height: auto;
+    }
+}
 
 
 
@@ -343,6 +352,7 @@ figcaption::before {
     display: block;
     color: #FFF;
     text-align: center;
+    white-space: nowrap;
     background-color: #118ab2;
     border-radius: 3rem;
     padding: 1rem;
