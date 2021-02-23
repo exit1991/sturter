@@ -1,0 +1,364 @@
+/*--------------------
+       WEBフォント
+--------------------*/
+/* HOWTOタイトル用 */
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+
+
+/*-モバイルファースト------
+        全体部分
+--------------------*/
+
+
+/*-デスクトップ版---------
+        全体部分
+--------------------*/
+/* @media screen and (min-width: 600px) {
+
+} */
+
+
+/* BODY */
+body {
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* すべてのmark要素 */
+mark {
+    color: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg,
+                                rgba(0, 0, 0, 0) 0%,
+                                rgba(0, 0, 0, 0) 50%,
+                                rgba(242, 204, 143, 0.4) 50%,
+                                rgba(242, 204, 143, 0.4) 100%);
+    padding: 0 0.5rem;
+}
+
+/* すべてのp要素 */
+p {
+    margin: 1rem 0;
+}
+
+
+
+/*-モバイルファースト------
+       メイン部分
+--------------------*/
+
+
+
+
+/*-デスクトップ版---------
+       メイン部分
+--------------------*/
+/* @media screen and (min-width: 600px) {
+
+} */
+
+
+
+#page-title {
+    display: flex;
+    font-size: 1.5rem;
+    /* text-shadow: #FFF 0 0 8px; */
+    color: #777;
+    /* text-shadow: 3px 0px 5px rgba(0,253,234,0.3), 2px 2px 7px rgba(134,146,251,0.9); */
+    height: 70vh;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-title h1 {
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+
+
+/* 共通 */
+.main-contents li {
+    list-style-position: inside;
+}
+
+
+
+/* トップエリア */
+.main-contents {
+    display: grid;
+    grid-template-columns: 1fr 18fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "L C R";
+    justify-items: center;
+    align-items: center;
+    column-gap: 3rem;
+    color: inherit;
+    margin: 3rem 5rem;
+}
+
+
+/* Gridレイアウト */
+main {
+    grid-area: C;
+    justify-self: center;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 5rem 4rem 4rem;
+}
+
+/* 各項目共通 */
+main>div, main>article {
+    padding: 0 0 5rem;
+    /* border-bottom: solid thin #555; */
+    border-bottom: dotted thin #555;
+}
+
+
+.index-box, .point-howto {
+    border: solid medium #777;
+    border-radius: 1.5rem;
+    background-color: #FFF;
+    padding: 1rem 2rem;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 6rem auto;
+    width: 20em;
+
+}
+
+.point-howto {
+    margin: 5rem 0;
+    width: auto;
+}
+
+
+.index-box h3, .point-howto h3 {
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+.index-box a {
+    text-decoration: underline;
+}
+
+
+
+main h1 {
+    border: none;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+}
+main h2 {
+    font-size: 1.3rem;
+    padding: 0.5rem 0 0;
+}
+main h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+main section {
+    padding: 0;
+    margin: 1rem 0;
+    margin: 1rem 0;
+}
+
+/* セクションのタイトル */
+.section-head h1 {
+    text-align: center;
+    padding: 0;
+    margin: 8rem auto 6rem;
+    /* text-decoration: underline dotted; */
+}
+
+.goto-top-link {
+    text-align: right;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    padding: 0;
+    margin: 3rem 0 0;
+}
+
+[class^="section-no"] h1 {
+    color: #333;
+    /* 0077b6 */
+    /* border-left: solid 1.5rem #80D2F2; */
+    border-left: solid 1.5rem #0096c7;
+    border-bottom: solid thin #0096c7;
+    padding: 0.5rem 0.7rem 0.5rem;
+    margin: 6rem 0 2rem;
+}
+
+[class^="section-no"] h2, [class^="section-no"] dt {
+    font-weight: bold;
+    color: #333;
+    padding: 0;
+    margin: 3rem 0 0.5rem;
+}
+
+[class^="section-no"] dt {
+    color: #333;
+}
+
+[class^="section-no"] dd {
+    padding: 0 0 0 1rem;
+}
+
+/* アイコン挿入 */
+[class^="section-no"] h2::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url(../img/Howto_Icon_01.png) no-repeat;
+    background-size: contain;
+    margin: 0 0.7rem 0 0;
+}
+
+/* アイコン挿入 */
+[class^="section-no"] dt::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url(../img/Howto_Icon_03.png) no-repeat;
+    background-size: contain;
+    margin: 0 0.3rem 0 0;
+}
+
+
+/* アイコン挿入 */
+.point-howto h3::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url(../img/Howto_Icon_02.png) no-repeat;
+    background-size: contain;
+    margin: 0 0.3rem 0 0;
+}
+
+/* ポイント部分 */
+.point-howto dt {
+    margin: 1rem 0 0.5rem;
+}
+
+
+/* リストのアイコン設定 */
+[class^="section-"] li {
+    list-style-position: outside;
+    margin: 1rem 0 1rem 2rem;
+}
+
+.section-head li {
+    margin: 0 0 0 2rem;
+}
+
+
+
+#load-menu-description h2 {
+    padding: 3rem 0 0;
+}
+
+
+
+
+#csv-input-howto h3 {
+    margin: 1rem 0 0;
+}
+#csv-input-howto p {
+    margin: 0;
+}
+
+
+/* simpleなリンク（こちら系） */
+.simple-link {
+    font-size: 1.1rem;
+    font-weight: bold;
+    /* text-align: right; */
+    margin: 4rem 0;
+}
+.simple-link a {
+    text-decoration: underline;
+}
+
+.simple-link p::before {
+    content: "→ ";
+}
+
+
+
+
+/*--------------------
+        画像関係
+--------------------*/
+
+figure {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+figcaption {
+    color: #666;
+    font-size: 0.7rem;
+    margin: 1rem 0 0;
+}
+figcaption::before {
+    content: "▲ ";
+}
+
+.screenshot-img {
+    /* width: 60vw; */
+    height: 30rem;
+    /* height: auto; */
+
+    /* border: 0.5rem #bbb solid; */
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
+    margin: 0 2rem;
+}
+
+#app-logo-image {
+    height: 10rem;
+    padding: 3rem 0;
+}
+
+
+
+
+
+
+
+
+/*--------------------
+     ダウンロードボタン
+--------------------*/
+
+/* ダウンロードボタン群全体 */
+.download-btn-set {
+    margin: 4rem 0;
+}
+
+/* ボタン一つ単位 */
+.download-btn a {
+    display: block;
+    color: #FFF;
+    text-align: center;
+    background-color: #118ab2;
+    border-radius: 3rem;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+/* アニメーション設定 */
+.download-btn a {
+    transition-property: transform, box-shadow;
+    transition-duration: 0.3s;
+}
+.download-btn a:hover {
+    transform: translate(-4px, -6px);
+    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
+}
+.download-btn a:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+}

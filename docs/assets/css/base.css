@@ -1,0 +1,272 @@
+/*--------------------
+       WEBフォント
+--------------------*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
+@font-face {
+    font-family: "DIN Alternate Bold";
+    src: url("../fonts/DIN Alternate Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+
+
+/*-モバイルファースト------
+        全体部分
+--------------------*/
+/* ROOT */
+html {
+    font-size: 14px;
+}
+
+/* BODY */
+body {
+    font-family: 'M PLUS 1p', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: rgba(70, 70, 70, 1.0);
+
+    background-image: url(../img/whitewall_10per.png),
+                      url(../img/Top_BG_01.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* 全てのリンク文字 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*-デスクトップ版---------
+        全体部分
+--------------------*/
+@media screen and (min-width: 600px) {
+    /* ROOT */
+    /* 基本は1.2vw、ただし10pxより小さくはしない */
+    html {
+        font-size: max(1.2vw, 10px);
+    }
+}
+
+
+
+
+/*-モバイルファースト------
+      HEADER部分
+--------------------*/
+/* ナビゲーションバー本体 */
+header {
+    font-family: "DIN Alternate Bold", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgba(100, 100, 100, 1.0);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header-left header-center header-right";
+    justify-items: center;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0.8rem 0;
+    margin: 0;
+}
+
+
+/* Gridレイアウト */
+/* 本来は grid-row などで線番号で指定するが */
+/* 名前を設定していれば名前の指定だけでOK */
+header .header-logo {
+    grid-area: header-center;
+}
+header .header-nav {
+    grid-area: header-right;
+}
+
+/* ロゴ画像 */
+/* 画像の縦位置を設定しないと、文字用に下に余白が出来てしまう */
+#top-logo {
+    width: calc(2000px * 0.1);
+    height: calc(600px * 0.1);
+    vertical-align: middle;
+}
+
+
+/* ハンバーガーメニュー関連 */
+.hamburger-bg {
+    display: block;
+    position: fixed;
+    top: 5px;
+    right: 9px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    visibility: visible;
+    z-index: 3;
+    background-color: #fff;
+}
+.hamburger-toggle {
+    display: block;
+    /* position: relative; */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 3.5rem;
+    height: 3rem;
+    visibility: visible;
+    z-index: 3;
+}
+.hamburger-toggle span {
+    display: block;
+    width: 100%;
+    height: 0.7rem;
+    background-color: #333;
+    border-radius: 1rem;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+}
+.hamburger-toggle span:nth-child(1) {
+    top: 0;
+}
+.hamburger-toggle span:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.hamburger-toggle span:nth-child(3) {
+    bottom: 0;
+}
+.hamburger-toggle.show span:nth-child(1) {
+    transform: translateY(1.12rem) rotate(-45deg);
+}
+.hamburger-toggle.show span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-toggle.show span:nth-child(3) {
+    transform: translateY(-1.12rem) rotate(45deg);
+}
+
+/* nav要素 */
+.main-nav {
+    position: fixed;
+    top: 6rem;
+    right: -5rem;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, right 1s;
+    z-index: 4;
+}
+/* nav要素（メニュー開いた時） */
+.main-nav.show {
+    right: 5rem;
+    opacity: 1;
+    visibility: visible;
+}
+/* メニューの１項目 */
+.header-nav ul li {
+    font-size: 3rem;
+    text-transform: uppercase;
+    list-style-type: none;
+    padding: 1rem 0;
+    margin: 0.5rem 0;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+/* メニューの１項目（選択時） */
+.header-nav ul li:hover {
+    color: rgba(228, 95, 95, 1.0);
+}
+/* メニュー表示時の画面マスク */
+.hamburger-mask {
+    display: block;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+/* メニュー表示時の画面マスク（メニュー開いた時） */
+.hamburger-mask.show {
+    visibility: visible;
+    opacity: .8;
+    cursor: pointer;
+    transition: opacity 1s;
+}
+
+
+/*-デスクトップ版---------
+       HEADER部分
+--------------------*/
+@media screen and (min-width: 600px) {
+
+    header {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0;
+        margin: 0.8rem 0 0;
+    }
+
+    /* ハンバーガーメニューの非表示 */
+    .hamburger-bg {
+        visibility: hidden;
+    }
+    .hamburger-toggle {
+        visibility: hidden;
+    }
+
+    /* nav要素 */
+    .main-nav {
+        position: inherit;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* ナビゲーションの表示 */
+    .header-nav {
+        display: inherit;
+    }
+
+    /* メインナビゲーション全体 */
+    .header-nav ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0.5rem 0rem;
+    }
+
+    /* ナビゲーションの１項目 */
+    .header-nav ul li {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        list-style-type: none;
+        border-bottom: 0.15rem solid;
+        padding: 0.6rem 0.8rem;
+        margin: 0rem 0.5rem;
+    }
+
+}
+
+
+
+
+
+
+/*--------------------
+       FOOTER部分
+--------------------*/
+body>footer {
+    background-color: inherit;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+body>footer p {
+    color: rgba(120, 120, 120, 1.0);
+}

@@ -1,0 +1,308 @@
+
+
+
+/*-モバイルファースト------
+       メイン部分
+--------------------*/
+/* トップエリア */
+.top-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */
+    color: inherit;
+    margin: 3rem 0 0;
+}
+
+/* 画面イメージ */
+/* width:1370px, height:2712px */
+#phone-image {
+    width: 80vw;
+    height: auto;
+    filter: drop-shadow(-6px 6px 10px rgba(0, 0, 0, 0.5));
+}
+
+.grid-top-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0 0 5rem;
+    margin: 5rem 0 0;
+}
+
+.grid-top-text h1 {
+    font-size: 2.5rem;
+    margin: 3rem 2rem 0;
+    word-break: keep-all;
+}
+
+.grid-top-text p {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+}
+
+.grid-top-text > section > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-top-text > section > a > p {
+    margin: 0 0 2.5rem;
+}
+
+.grid-top-text .storelink-icon {
+    margin: 20px 2rem 20px;
+}
+
+.appstore-icon {
+    margin: 0 0 2rem;
+}
+
+.appstore-icon p {
+    display: inline-block;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg,
+                                rgba(0, 0, 0, 0) 0%,
+                                rgba(0, 0, 0, 0) 50%,
+                                rgba(239, 71, 111, 0.2) 50%,
+                                rgba(239, 71, 111, 0.2) 100%);
+    padding: 0 1rem;
+}
+
+.grid-top-text .caution p {
+    font-size: 0.8rem;
+    margin: 0 2rem;
+}
+
+
+/*-デスクトップ版---------
+       メイン部分
+--------------------*/
+@media screen and (min-width: 600px) {
+    /* トップエリア */
+    .top-area {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: auto;
+        grid-template-areas: "grid-phone-image grid-top-text";
+        justify-items: center;
+        align-items: center;
+        column-gap: 3rem;
+        color: inherit;
+        margin: 3rem 5rem;
+    }
+
+
+    /* Gridレイアウト */
+    /* 本来は grid-row などで線番号で指定するが */
+    /* 名前を設定していれば名前の指定だけでOK */
+    .top-area .grid-phone-image {
+        grid-area: grid-phone-image;
+        justify-self: end;
+    }
+    .top-area .grid-top-text {
+        grid-area: grid-top-text;
+        justify-self: start;
+    }
+
+    /* 画面イメージ */
+    /* width:1370px, height:2712px */
+    #phone-image {
+        width: 20vw;
+        height: auto;
+        min-width: 200px;
+    }
+
+    .grid-top-text {
+        background-color: inherit;
+        padding: 0;
+        margin: 0;
+    }
+
+    .grid-top-text h1 {
+        font-size: 2.5rem;
+        margin: 0 0 3rem;
+        word-break: normal;
+    }
+
+    .grid-top-text p {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .grid-top-text > section > a {
+        display: inherit;
+    }
+
+    .grid-top-text > section > a > p {
+        margin: inherit;
+    }
+
+    .grid-top-text .storelink-icon {
+        margin: 2rem 1rem 1rem;
+    }
+
+    .appstore-icon {
+        margin: 2rem 0;
+    }
+
+
+    .grid-top-text .caution p {
+        font-size: 0.8rem;
+        margin: inherit;
+    }
+
+}
+
+
+
+
+/*-モバイルファースト------
+       ABOUT部分
+--------------------*/
+/* アバウトの中一括 */
+#about > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(252, 252, 252, 1.0);
+    font-weight: 300;
+}
+
+/* アバウトごとの背景色 */
+.about-01 {
+    background-color: rgba(41, 124, 180, 1.0);
+}
+.about-02 {
+    background-color: rgba(21, 63, 92, 1.0);
+}
+
+/* アバウトタイトル部分一括 */
+.grid-about-title {
+    word-break: keep-all;
+    margin: 4rem 3rem 1rem;
+    text-align: center;
+}
+
+/* アバウトのアイコン一括 */
+.grid-about-icon {
+    margin: 0 3rem;
+}
+
+/* アバウトの詳細部分一括 */
+.grid-about-description {
+    font-size: 1.2rem;
+    margin: 1rem 3rem 4rem;
+}
+
+/* アイコンの大きさ一括 */
+.about-icon {
+    width: 60vw;
+    height: auto;
+}
+
+
+/*-デスクトップ版---------
+       ABOUT部分
+--------------------*/
+@media screen and (min-width: 600px) {
+    /* アバウトの中一括 */
+    #about > div {
+        display: grid;
+        grid-template-columns: 5fr 7fr 1fr;
+        grid-template-rows: 1fr 5fr;
+        grid-template-areas:
+            "grid-about-title grid-about-title grid-about-title"
+            "grid-about-icon grid-about-description none";
+        justify-items: center;
+        align-items: center;
+        column-gap: 3rem;
+        color: rgba(252, 252, 252, 1.0);
+        font-weight: 200;
+        padding: 4rem 4rem;
+    }
+
+    /* アバウトタイトル部分一括 */
+    .grid-about-title {
+        grid-area: grid-about-title;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* アバウトのアイコン一括 */
+    .grid-about-icon {
+        grid-area: grid-about-icon;
+        justify-self: end;
+        margin: 0;
+    }
+
+    /* アバウトの詳細部分一括 */
+    .grid-about-description {
+        /* font-size: 1.4rem; */
+        font-size: max(1.4rem, 18px);
+        grid-area: grid-about-description;
+        justify-self: start;
+        margin: 2rem 0;
+    }
+
+    /* アイコンの大きさ一括 */
+    .about-icon {
+        width: 20vw;
+        height: auto;
+        min-width: 200px;
+    }
+}
+
+
+
+
+
+/*--------------------
+      下部ボタン部分
+--------------------*/
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(252, 252, 252, 1.0);
+    margin: 4rem 3rem;
+}
+
+.link-buttons>div {
+    width: 30rem;
+}
+
+.link-buttons>div p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 3rem;
+    padding: 1rem 1rem;
+    margin: 2rem 0;
+}
+
+.button-csv p {
+    background-color: rgba(228, 94, 94, 1.0);
+}
+.button-qa p {
+    background-color: rgba(255, 134, 51, 1.0);
+}
+
+
+/* アニメーション設定 */
+.link-buttons>div p {
+    transition-property: transform, box-shadow;
+    transition-duration: 0.3s;
+}
+.link-buttons>div p:hover {
+    transform: translate(-4px, -6px);
+    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
+}
+.link-buttons>div p:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+}
