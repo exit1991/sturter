@@ -24,11 +24,21 @@ body {
     font-weight: normal;
     font-size: 1rem;
     color: rgba(70, 70, 70, 1.0);
+    /* background-size: auto; */
+}
 
-    background-image: url(../img/whitewall_10per.png),
-                      url(../img/Top_BG_01.jpg);
-    background-size: auto;
-    background-attachment: fixed;
+/* スマホ背景バグ対策 */
+body::before {
+  background: url(../img/Top_BG_01.jpg) no-repeat center;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
 }
 
 /* 全てのリンク文字 */
@@ -36,6 +46,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
 
 
 /*-デスクトップ版---------
@@ -50,7 +61,10 @@ a {
 
     /* BODY */
     body {
+        background-attachment: fixed;
         background-size: cover;
+        background-image: url(../img/whitewall_10per.png),
+                          url(../img/Top_BG_01.jpg);
     }
 }
 

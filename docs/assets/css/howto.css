@@ -9,12 +9,6 @@
 /*--------------------
         全体部分
 --------------------*/
-/* BODY */
-body {
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 /* すべてのmark要素 */
 mark {
     color: rgba(0, 0, 0, 0.8);
