@@ -88,15 +88,13 @@ header {
     justify-items: center;
     align-items: center;
 
-    background-color: rgba(255, 255, 255, 1);
-    padding: 0.8rem 0;
+    /* background-color: rgba(255, 255, 255, 1); */
+    padding: 2rem 0 0;
     margin: 0;
 }
 
 
 /* Gridレイアウト */
-/* 本来は grid-row などで線番号で指定するが */
-/* 名前を設定していれば名前の指定だけでOK */
 header .header-logo {
     grid-area: header-center;
 }
@@ -105,7 +103,6 @@ header .header-nav {
 }
 
 /* ロゴ画像 */
-/* 画像の縦位置を設定しないと、文字用に下に余白が出来てしまう */
 #top-logo {
     width: calc(2000px * 0.1);
     height: calc(600px * 0.1);
