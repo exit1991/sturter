@@ -66,6 +66,10 @@ a {
         background-image: url(../img/whitewall_10per.png),
                           url(../img/Top_BG_01.jpg);
     }
+
+    body::before {
+      display: none;
+    }
 }
 
 
