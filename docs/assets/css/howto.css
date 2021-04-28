@@ -7,7 +7,7 @@
 
 
 /*--------------------
-        全体部分
+        全体
 --------------------*/
 /* すべてのmark要素 */
 mark {
@@ -24,9 +24,6 @@ mark {
 p {
     margin: 1rem 0;
 }
-
-
-
 
 
 
@@ -54,11 +51,9 @@ p {
 }
 
 
-
 /* トップエリア */
 .main-contents {
     color: inherit;
-    /* margin: 3rem 2rem; */
 }
 
 /* Gridレイアウト */
@@ -114,7 +109,6 @@ main h3 {
 }
 main section {
     padding: 0;
-    margin: 1rem 0;
     margin: 1rem 0;
 }
 
@@ -230,7 +224,6 @@ main section {
 .simple-link {
     font-size: 1.1rem;
     font-weight: bold;
-    /* text-align: right; */
     margin: 4rem 0;
 }
 .simple-link a {
@@ -268,12 +261,6 @@ main section {
         padding: 2rem 4rem 4rem;
     }
 }
-
-
-
-
-
-
 
 
 
@@ -330,12 +317,9 @@ figcaption::before {
 
 
 
-
-
 /*--------------------
      ダウンロードボタン
 --------------------*/
-
 /* ダウンロードボタン群全体 */
 .download-btn-set {
     margin: 4rem 0;
