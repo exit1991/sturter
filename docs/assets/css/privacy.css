@@ -1,0 +1,113 @@
+/*--------------------
+       全体部分
+--------------------*/
+/* すべてのp要素 */
+p {
+    /* margin: 0.4rem 0 1rem; */
+    margin: 0;
+}
+
+
+
+/*-モバイルファースト------
+       メイン部分
+--------------------*/
+/* ページタイトル */
+#page-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #777;
+    height: 70vh;
+    width: auto;
+}
+#page-title h1 {
+    font-family: "DIN Alternate Bold", sans-serif;
+    font-weight: bold;
+}
+
+/* リストの共通設定 */
+.main-contents li {
+    list-style-position: inside;
+}
+
+/* トップエリア */
+.main-contents {
+    color: inherit;
+    /* margin: 3rem 2rem; */
+}
+
+/* Gridレイアウト */
+main {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 2rem 2rem 4rem;
+}
+
+
+main h1 {
+    border: none;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+}
+main h2 {
+    font-size: 1.3rem;
+    padding: 0.5rem 0 0;
+}
+main h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+main section {
+    padding: 0;
+    margin: 2rem 0;
+}
+
+
+main address {
+    font-style: normal;
+    text-decoration: underline;
+    color: cornflowerblue;
+}
+
+
+
+/* アイコン挿入 */
+main h2::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url(../img/Howto_Icon_03.png) no-repeat;
+    background-size: contain;
+    margin: 0 0.7rem 0 0;
+}
+
+
+/*-デスクトップ版---------
+       メイン部分
+--------------------*/
+@media screen and (min-width: 600px) {
+
+    /* トップエリア */
+    .main-contents {
+        display: grid;
+        grid-template-columns: 1fr 18fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "L C R";
+        justify-items: center;
+        align-items: center;
+        column-gap: 3rem;
+        color: inherit;
+        margin: 3rem 5rem;
+    }
+
+    /* Gridレイアウト */
+    main {
+        grid-area: C;
+        justify-self: center;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 2rem 4rem 4rem;
+    }
+}
